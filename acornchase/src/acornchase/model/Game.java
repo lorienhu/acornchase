@@ -51,20 +51,22 @@ public class Game {
 			block();
 		}
 	}
-	
+
+	// Add speed to squirrel for turbopower length seconds.
 	public void turbo() {
-		
 	}
 	
+	// Block the squirrel from dying.
 	public void block() {
 		
 	}
 	
+	// Lower the speed of the opposing squirrel.
 	public void slow() {
 		
 	}
 	
-	public void draw() {
+	public void draw(Graphics g) {
 
 	}
 	

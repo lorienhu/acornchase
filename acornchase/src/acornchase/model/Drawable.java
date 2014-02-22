@@ -2,10 +2,10 @@ package acornchase.model;
 
 public abstract class Drawable {
 
-	public int x_location;	
-	public int y_location;
-	public int HEIGHT;
-	public int WIDTH;
+	protected int x_location;	
+	protected int y_location;
+	protected int HEIGHT;
+	protected int WIDTH;
 	
 	public Drawable () {
 	}
