@@ -7,6 +7,13 @@ public class Squirrel extends Movable {
 	protected int speed; 
 	protected int posX;
 	
+	private SlowPower slowPower;
+	private BlockPower blockPower;
+	private FreezePower freezePower;
+	private TurboPower turboPower;
+	private ReversePower reversePower;
+
+	
 	public Squirrel() {
 		this.CONST_SPEED = 10;
 		
