@@ -1,6 +1,6 @@
 package acornchase.model;
 
-public class Power extends Movable {
+public class Power extends Drawable {
 
 	
 	
