@@ -149,12 +149,8 @@ public class Board extends JPanel implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		counter += (timer.getDelay() / 1000);
-//<<<<<<< HEAD
-		//System.out.println(counter);
-//=======
 		System.out.println(counter);
 		game.update();
-//>>>>>>> branch 'master' of https://github.com/lsom/acornchase.git
 		repaint();
 		
 	}
