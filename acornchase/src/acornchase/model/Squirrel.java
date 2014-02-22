@@ -6,17 +6,14 @@ public class Squirrel extends Movable {
 	
 	protected int speed; 
 	protected int posX;
-	
-	private SlowPower slowPower;
-	private BlockPower blockPower;
-	private FreezePower freezePower;
-	private TurboPower turboPower;
-	private ReversePower reversePower;
 
-		public Squirrel() {
+	public Squirrel(int position) {
 		this.CONST_SPEED = 10;
 		this.speed = CONST_SPEED;
-		this.posX = 0;
+		this.posX = position;
+		
+		
+		
 	}
 	
 	//increase in the speed of the squirrel
