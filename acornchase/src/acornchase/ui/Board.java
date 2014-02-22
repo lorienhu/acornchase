@@ -11,9 +11,6 @@ import java.awt.event.MouseAdapter;
 
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
-
-import ca.ubc.cpsc210.spaceinvaders.model.SIGame;
-
 import acornchase.model.Game;
 import acornchase.model.Squirrel;
 
@@ -22,7 +19,6 @@ public class Board extends JPanel{
 	private static final String OVER = "Game Over!";
 	private static final String REPLAY = "R to replay";
 	private Game game;
-	Squirrel squirrel;
 	Button[] buttons;
 	ScorePanel score;
 	ScorePanel time;
@@ -45,7 +41,7 @@ public class Board extends JPanel{
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		drawGame(g);
-		if (game.isOver()) {
+		if (game.getState().compareTo("end")==0) {
 			gameOver(g);
 		}	      //  g.drawImage(bgImage, 0, 0, null);
 	}
@@ -57,11 +53,16 @@ public class Board extends JPanel{
 		g.setColor(new Color( 0, 0, 0));
 		g.setFont(new Font("Arial", 20, 20));
 		FontMetrics fm = g.getFontMetrics();
-		centreString(OVER, g, fm, SIGame.HEIGHT / 2);
-		centreString(REPLAY, g, fm, SIGame.HEIGHT / 2 + 50);
+		String finalStr = OVER + time.getFinalTime();
+		centreString(OVER, g, fm, game.HEIGHT / 2);
+		centreString(REPLAY, g, fm, game.HEIGHT / 2 + 50);
 		g.setColor(saved);
 	}
 
+	private void centreString(String str, Graphics g, FontMetrics fm, int yPos) {
+		int width = fm.stringWidth(str);
+		g.drawString(str, (game.WIDTH - width) / 2, yPos);
+	}
 
 	private void drawGame(Graphics g) {
 		game.draw(g);   //TODO in game
