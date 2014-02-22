@@ -10,6 +10,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
+import acornchase.model.Game;
+
 
 
 
@@ -34,11 +36,10 @@ public class ScorePanel extends JPanel{
 	// Constructs a score panel
 	// effects: sets the background colour and draws the initial labels;
 	//          updates this with the game whose score is to be displayed 
-	public ScorePanel() { 
+	public ScorePanel(Game g) { 
 		// set the back ground and text to be shown	
 		clockTick = 0;  		//initial clock setting in clock ticks
 		clockTime = ((double)clockTick)/10.0;
-
 		clockTimeString = new Double(clockTime).toString();
 		myClockFont = new Font("Serif", Font.PLAIN, 50);
 
