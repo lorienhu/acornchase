@@ -11,11 +11,11 @@ public abstract class Drawable {
 	}
 	
 	public int getX() {
-		return x_location;
+		return x_position;
 	}
 	
 	public void setLocation(int x) {
-		x_location = x;
+		x_position = x;
 	}
 	
 	public boolean hasCollidedWith (int x, int y) {
