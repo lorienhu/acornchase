@@ -24,6 +24,12 @@ public abstract class Drawable {
 		else return true;
 	}
 	
+	public boolean isBoink(Drawable a, Drawable b) {
+		
+		return true;
+	}
+	
+	
 	
 	
 }
