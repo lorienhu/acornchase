@@ -67,6 +67,7 @@ public class Board extends JPanel implements ActionListener{
 	@Override
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);
+		g.setColor(Color.WHITE);
 		g.drawString(Integer.toString(counter), 20, 20);
 		drawGame(g);
 		drawUI(g);
