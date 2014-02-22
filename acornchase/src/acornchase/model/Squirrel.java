@@ -3,11 +3,11 @@ package acornchase.model;
 public class Squirrel extends Movable {
 
 
-	public static int CONST_SPEED;
+	private int base_speed;
 
-	public Squirrel(int position) {
+	public Squirrel(int position, int base_speed) {
 		this.CONST_SPEED = 10;
-		this.x_speed = CONST_SPEED;
+		this.x_speed = base_speed;
 		this.y_speed = 0;
 		this.x_position = position;
 
