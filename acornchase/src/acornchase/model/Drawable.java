@@ -14,6 +14,8 @@ public abstract class Drawable {
 	public void setLocation(int x) {
 		x_location = x;
 	}
+	
+	
 
 
 }
