@@ -3,13 +3,15 @@ package acornchase.model;
 public class Power extends Drawable {
 
 	private int timer;
-	private int cooldown;
 	private int length;
-	private Squirrel squirrel;
-	
-	public Power(Squirrel sqr) {
+	private int cooldown;
+
+	public Power(int l, int cd) {
 		timer = 0;
-		squirrel = sqr;
+		length = l;
+		cooldown = cd;
+
+	
 	}
 	
 	public void afflict() {

@@ -12,13 +12,12 @@ public class Squirrel extends Movable {
 		this.speed = CONST_SPEED;
 		this.posX = position;
 		
-		
-		
 	}
 	
-	//increase in the speed of the squirrel
-	public int turbo() {
-		return 0;
+	//jump
+	
+	public void jump() {
+		
 	}
 	
 	//how fast the squirrel is moving

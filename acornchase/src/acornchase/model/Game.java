@@ -23,6 +23,8 @@ public class Game {
 	public String state;
 	public boolean isOver;
 	
+	private Power slowPower;
+	
 	public Game() {
 		state = "start";
 		time = 0;
@@ -40,14 +42,26 @@ public class Game {
 			player.jump();
 		}
 		else if (power.equals("turbo")) {
-			player.turbo();
+			turbo();
 		}
 		else if (power.equals("slow")) {
-			player.block();
+			block();
 		}
 		else if (power.equals("block")) {
-			player.block();
+			block();
 		}
+	}
+	
+	public void turbo() {
+		
+	}
+	
+	public void block() {
+		
+	}
+	
+	public void slow() {
+		
 	}
 	
 	public void draw() {
