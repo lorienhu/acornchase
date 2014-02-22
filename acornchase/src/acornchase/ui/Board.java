@@ -28,7 +28,7 @@ public class Board extends JPanel{
 		addMouseListener(new MAdapter()); //for the point n click
 		setFocusable(true);
 		time =  new ScorePanel();
-		setPreferredSize(new Dimension(Game.WIDTH, Game.HEIGHT));  //TODO
+		setPreferredSize(new Dimension(Game.WIDTH, Game.HEIGHT));  
 		//setBackground(Color.GRAY); I want this to be the image
 		this.game = g;
 		
@@ -48,7 +48,6 @@ public class Board extends JPanel{
 
 
 	private void gameOver(Graphics g) {
-		// TODO Auto-generated method stub
 		Color saved = g.getColor();
 		g.setColor(new Color( 0, 0, 0));
 		g.setFont(new Font("Arial", 20, 20));
