@@ -6,7 +6,6 @@ public abstract class Movable extends Drawable {
 	
 	public static int CONST_SPEED;
 	protected int speed; 
-	protected int posX;
 	
 	public void setDirection(char c) {
 		direction = c;
@@ -23,10 +22,10 @@ public abstract class Movable extends Drawable {
 	// modifies: this
 	// effects: squirrel/movables is constrained to remain within horizontal boundaries of game
 	protected void handleBoundary() {
-		if (x_location < 0)
-			x_location = 0;
-		else if (x_location > Game.WIDTH)
-			x_location = Game.WIDTH;
+		if (x_position < 0)
+			x_position = 0;
+		else if (x_position > Game.WIDTH)
+			x_position = Game.WIDTH;
 	}
 
 

@@ -2,10 +2,10 @@ package acornchase.model;
 
 public abstract class Drawable {
 
-	public int x_location;	
-	public int y_location;
-	public int HEIGHT;
-	public int WIDTH;
+	protected int x_position;	
+	protected int y_position;
+	protected int HEIGHT;
+	protected int WIDTH;
 	
 	public Drawable () {
 	}
@@ -19,9 +19,9 @@ public abstract class Drawable {
 	}
 	
 	public boolean hasCollidedWith (int x, int y) {
-		if (x >= (x_location + WIDTH) ) return true;
-		if (y >= (y_location + HEIGHT)) return true;
-		else return false;
+		if ((x >= (x_position + WIDTH/2)) || (x <= (x_position - WIDTH/2)) ) return false;
+		if ((y >= (y_position + HEIGHT/2)) || (y <= (y_position - HEIGHT/2))) return false;
+		else return true;
 	}
 	
 }

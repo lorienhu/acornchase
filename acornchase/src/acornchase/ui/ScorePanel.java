@@ -1,6 +1,5 @@
 package acornchase.ui;
 
-
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -57,20 +56,9 @@ public class ScorePanel extends JPanel{
 				timeLbl.setText(clockTimeString);
 				//System.out.println(clockTime);
 			    }
-			
-			
 			});
 		
-	}
-	
-	public void startTimer()
-	{
-		myTimer1.start();
-	}
-	
-	public void stopTimer()
-	{
-		myTimer1.stop();
+				
 	}
 	
 	public void launchStopWatch()
@@ -88,14 +76,22 @@ public class ScorePanel extends JPanel{
 		add(bottomPanel, BorderLayout.SOUTH);
 
 		setSize(300,200);
-		setBackground(Color.orange);
+		setBackground(Color.blue);
 
 	}//end of launchClock
 
+	public void startTimer() {
+		myTimer1.start();
+	}
 	
+	public void stopTimer() {
+		myTimer1.stop();
+	}
 	
+
 	public String getFinalTime() {
 		return clockTimeString; 
+
 	}
 	
 
