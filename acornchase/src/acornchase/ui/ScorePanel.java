@@ -61,6 +61,16 @@ public class ScorePanel extends JPanel{
 		
 	}
 	
+	public void startTimer()
+	{
+		myTimer1.start();
+	}
+	
+	public void stopTimer()
+	{
+		myTimer1.stop();
+	}
+	
 	public void launchStopWatch()
 	{
 		topPanel = new JPanel();
