@@ -1,5 +1,6 @@
 package acornchase.model;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.MouseEvent;
 import java.util.List;
@@ -28,8 +29,8 @@ public class Game {
 	public Game() {
 		state = "start";
 		time = 0;
-		player = new Squirrel(PLAYER_START_POS, 0);
-		enemy = new Squirrel(ENEMY_START_POS, 1);
+		player = new Squirrel(PLAYER_START_POS, 0, Color.BLUE);
+		enemy = new Squirrel(ENEMY_START_POS, 1, Color.RED);
 	}
 	
 	// Update the game on a tick.
@@ -71,8 +72,8 @@ public class Game {
 		
 	}
 	
-	public void draw() {
-
+	public void draw(Graphics g) {
+		player.draw(g);
 	}
 	
 	// Retrieves state of game.
