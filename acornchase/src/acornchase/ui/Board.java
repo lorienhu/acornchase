@@ -40,6 +40,7 @@ public class Board extends JPanel implements ActionListener{
 	Rectangle blockBounds;
 	Timer timer;
 	int counter = 0;
+	private int counterweight;
 
 
 	public Board(Game g) {
@@ -138,8 +139,12 @@ public class Board extends JPanel implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		counter += (timer.getDelay() / 1000);
-		System.out.println(counter);
+		if (counterweight == 10) {
+			counter +=1;
+			counterweight = 1;
+		} else {
+			counterweight++;
+		}
 		game.update();
 		repaint();
 		
