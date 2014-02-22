@@ -29,6 +29,6 @@ public class Squirrel extends Movable {
 	
 	//where the squirrel is on the screen
 	public int getPosition() {
-		return posX;
+		return x_position;
 	}
 }
