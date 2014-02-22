@@ -43,7 +43,7 @@ public class Board extends JPanel{
 		buttons = new Button[5];
 		addMouseListener(new MAdapter()); //for the point n click
 		setFocusable(true);
-		time =  new ScorePanel();
+		time =  new ScorePanel(g);
 		setPreferredSize(new Dimension(Game.WIDTH, Game.HEIGHT));  
 		setBackground(Color.GRAY); //I want this to be the image
 		this.game = g;

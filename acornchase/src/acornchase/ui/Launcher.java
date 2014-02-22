@@ -79,8 +79,8 @@ public class Launcher extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent ae) {
 				game.update();
-				gp.repaint();
-				sp.update();
+				b.repaint();
+				sp.update(null);
 			}
 		});
 	}
