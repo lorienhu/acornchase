@@ -33,7 +33,13 @@ public class Game {
 	}
 	
 	// Update the game on a tick.
-	public void update() {}
+	public void update() {
+		// Tick each power.
+		// Move each squirrel.
+		// Check for collisions.
+		// Check for gameover.
+		
+	}
 	
 	
 	public void applyPower(String power) {

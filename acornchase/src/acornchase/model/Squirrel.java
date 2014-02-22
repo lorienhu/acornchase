@@ -7,17 +7,19 @@ public class Squirrel extends Movable {
 
 	public Squirrel(int position) {
 		this.CONST_SPEED = 10;
-		this.speed = CONST_SPEED;
-		this.x_position = position;		
+		this.x_speed = CONST_SPEED;
+		this.y_speed = 0;
+		this.x_position = position;
+
 	}
 	
 	//jump 
 
 	public void move() {
 		if (x_position == 0) {
-			speed = 0;
+			x_speed = 0;
 		}
-		x_position -= speed;
+		x_position -= x_speed;
 	}
 	
 	//jump
@@ -29,7 +31,7 @@ public class Squirrel extends Movable {
 	
 	//how fast the squirrel is moving
 	public int getSpeed() {
-		return speed;
+		return x_speed;
 	}
 	
 	//where the squirrel is on the screen
