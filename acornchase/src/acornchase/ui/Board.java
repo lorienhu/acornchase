@@ -30,8 +30,7 @@ public class Board extends JPanel implements ActionListener{
 	Button[] buttons;
 //<<<<<<< HEAD
 	ScorePanel time;
-//=======
-//>>>>>>> branch 'master' of https://github.com/lsom/acornchase.git
+
 	TurboBlock turboBlock;
 	FreezeBlock freezeBlock;
 	SlowBlock slowBlock;
@@ -74,11 +73,6 @@ public class Board extends JPanel implements ActionListener{
 		g.drawString(Integer.toString(counter), 20, 20);
 		drawGame(g);
 		drawUI(g);
-		if(game.getState().compareTo("start")==0)
-		{
-			time = new ScorePanel(this.game);
-		}
-			
 		if (game.getState().compareTo("end")==0) {
 			gameOver(g);
 		}	      //  g.drawImage(bgImage, 0, 0, null);
