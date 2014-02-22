@@ -10,7 +10,7 @@ public class Squirrel extends Movable {
 		this.posX = position;
 	}
 	
-	//jump
+	//jump 
 	
 	public void jump() {
 		
