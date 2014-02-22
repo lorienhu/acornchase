@@ -58,7 +58,7 @@ public class Board extends JPanel implements ActionListener{
 		slowBlock = new SlowBlock();
 		freezeBlock = new FreezeBlock();
 		turboBlock = new TurboBlock();
-		timer = new Timer(1000, this);
+		timer = new Timer(100, this);
 		timer.start();
 		
 
