@@ -3,7 +3,11 @@ package acornchase.model;
 public abstract class Movable extends Drawable {
 
 	private char direction = 'L';
-
+	
+	public static int CONST_SPEED;
+	protected int speed; 
+	protected int posX;
+	
 	public void setDirection(char c) {
 		direction = c;
 	}
@@ -12,7 +16,7 @@ public abstract class Movable extends Drawable {
 	// modifies: this
 	// effects:  squirrel/movables has been moved
 	public void move() {
-
+		handleBoundary();
 	}
 	
 	// Constrains squirrel/movables so that it doesn't travel off sides of screen
