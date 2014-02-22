@@ -30,7 +30,6 @@ public class Game {
 		time = 0;
 		player = new Squirrel(PLAYER_START_POS);
 		enemy = new Squirrel(ENEMY_START_POS);
-		draw();
 	}
 	
 	// Update the game on a tick.
@@ -51,15 +50,17 @@ public class Game {
 			block();
 		}
 	}
-	
+
+	// Add speed to squirrel for turbopower length seconds.
 	public void turbo() {
-		
 	}
 	
+	// Block the squirrel from dying.
 	public void block() {
 		
 	}
 	
+	// Lower the speed of the opposing squirrel.
 	public void slow() {
 		
 	}
