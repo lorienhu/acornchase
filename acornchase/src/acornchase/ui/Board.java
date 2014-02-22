@@ -140,6 +140,7 @@ public class Board extends JPanel implements ActionListener{
 	public void actionPerformed(ActionEvent arg0) {
 		counter += (timer.getDelay() / 1000);
 		System.out.println(counter);
+		game.update();
 		repaint();
 		
 	}
