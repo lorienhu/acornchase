@@ -6,7 +6,6 @@ public abstract class Movable extends Drawable {
 	
 	public static int CONST_SPEED;
 	protected int speed; 
-	protected int posX;
 	
 	public void setDirection(char c) {
 		direction = c;

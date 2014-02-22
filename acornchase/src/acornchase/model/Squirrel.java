@@ -2,15 +2,10 @@ package acornchase.model;
 
 public class Squirrel extends Movable {
 
-	public static int CONST_SPEED;
-	
-	protected int speed; 
-	protected int posX;
-
 	public Squirrel(int position) {
 		this.CONST_SPEED = 10;
 		this.speed = CONST_SPEED;
-		this.posX = position;
+		this.x_position = position;
 		
 	}
 	
