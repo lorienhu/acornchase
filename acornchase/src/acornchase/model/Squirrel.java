@@ -1,15 +1,20 @@
 package acornchase.model;
 
 public class Squirrel extends Movable {
-	
+
 	public static int CONST_SPEED;
 	
 	protected int speed; 
 	protected int posX;
 	
-	public Squirrel() {
+	private SlowPower slowPower;
+	private BlockPower blockPower;
+	private FreezePower freezePower;
+	private TurboPower turboPower;
+	private ReversePower reversePower;
+
+		public Squirrel() {
 		this.CONST_SPEED = 10;
-		
 		this.speed = CONST_SPEED;
 		this.posX = 0;
 	}
