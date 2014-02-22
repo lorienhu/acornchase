@@ -71,16 +71,16 @@ public class Board extends JPanel{
 
 	private void drawUI(Graphics g) {
 		Graphics2D g2d = (Graphics2D)g;
-		g2d.drawImage(turboBlock.getImage(), 0, 330, this);
+		g2d.drawImage(slowBlock.getImage(), 0, 330, this);
 		g2d.drawImage(freezeBlock.getImage(), 100, 330, this);
-		g2d.drawImage(slowBlock.getImage(), 200, 330, this);
-		g2d.drawImage(blockBlock.getImage(), 300, 330, this);
-		g2d.drawImage(slowBlock.getImage(), 400, 330, this);
-		scareBounds = new Rectangle(0, 330, 100, 50);
-		turboBounds = new Rectangle(0, 330, 100, 50);
-		freezeBounds = new Rectangle(0, 330, 100, 50);
+		g2d.drawImage(blockBlock.getImage(), 200, 330, this);
+		g2d.drawImage(turboBlock.getImage(), 300, 330, this);
+		g2d.drawImage(scareBlock.getImage(), 400, 330, this);
 		slowBounds = new Rectangle(0, 330, 100, 50);
-		blockBounds = new Rectangle(0, 330, 100, 50);
+		freezeBounds = new Rectangle(100, 330, 100, 50);
+		blockBounds = new Rectangle(200, 330, 100, 50);
+		turboBounds = new Rectangle(300, 330, 100, 50);
+		scareBounds = new Rectangle(400, 330, 100, 50);
 		// TODO Auto-generated method stub
 
 	}
@@ -111,19 +111,19 @@ public class Board extends JPanel{
 	private class MAdapter extends MouseAdapter {
 		public void mouseClicked(MouseEvent e) {
 			if (scareBounds.contains(new Point(e.getX(), e.getY()))) {
-
+				System.out.println("scareBounds");
 			}
 			if (turboBounds.contains(new Point(e.getX(), e.getY()))) {
-
+				System.out.println("turboBounds");
 			}
 			if (freezeBounds.contains(new Point(e.getX(), e.getY()))) {
-
+				System.out.println("freezeBounds");
 			}
 			if (slowBounds.contains(new Point(e.getX(), e.getY()))) {
-
+				System.out.println("slowBounds");
 			}
 			if (blockBounds.contains(new Point(e.getX(), e.getY()))) {
-
+				System.out.println("blockBounds");
 			}
 
 		}
