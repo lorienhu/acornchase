@@ -1,5 +1,5 @@
 package acornchase.model;
 
-public class Movable {
+public abstract class Movable {
 
 }
