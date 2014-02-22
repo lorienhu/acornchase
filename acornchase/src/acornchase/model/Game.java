@@ -30,7 +30,6 @@ public class Game {
 		time = 0;
 		player = new Squirrel(PLAYER_START_POS);
 		enemy = new Squirrel(ENEMY_START_POS);
-		draw();
 	}
 	
 	// Update the game on a tick.

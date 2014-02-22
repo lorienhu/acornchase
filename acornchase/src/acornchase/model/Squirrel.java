@@ -17,7 +17,7 @@ public class Squirrel extends Movable {
 		if (x_position == 0) {
 			speed = 0;
 		}
-		posX -= speed;
+		x_position -= speed;
 	}
 	
 	//jump
@@ -34,6 +34,6 @@ public class Squirrel extends Movable {
 	
 	//where the squirrel is on the screen
 	public int getPosition() {
-		return posX;
+		return x_position;
 	}
 }
