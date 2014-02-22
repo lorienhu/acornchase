@@ -9,23 +9,29 @@ import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.Point;
 import java.awt.Rectangle;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
+import javax.swing.Timer;
 
 import acornchase.model.Game;
 import acornchase.model.Squirrel;
 
 @SuppressWarnings("serial")
-public class Board extends JPanel{
+public class Board extends JPanel implements ActionListener{
 	private static final String OVER = "Game Over!";
 	private static final String REPLAY = "R to replay";
 	private Game game;
 	Button[] buttons;
+//<<<<<<< HEAD
 	ScorePanel time;
+//=======
+//>>>>>>> branch 'master' of https://github.com/lsom/acornchase.git
 	TurboBlock turboBlock;
 	FreezeBlock freezeBlock;
 	SlowBlock slowBlock;
@@ -36,13 +42,14 @@ public class Board extends JPanel{
 	Rectangle freezeBounds;
 	Rectangle slowBounds;
 	Rectangle blockBounds;
+	Timer timer;
+	int counter = 0;
 
 
 	public Board(Game g) {
 		buttons = new Button[5];
 		addMouseListener(new MAdapter()); //for the point n click
 		setFocusable(true);
-		time =  new ScorePanel(g);
 		setPreferredSize(new Dimension(Game.WIDTH, Game.HEIGHT));  
 		setBackground(Color.GRAY); //I want this to be the image
 		this.game = g;
@@ -51,6 +58,9 @@ public class Board extends JPanel{
 		slowBlock = new SlowBlock();
 		freezeBlock = new FreezeBlock();
 		turboBlock = new TurboBlock();
+		timer = new Timer(1000, this);
+		timer.start();
+		
 
 
 	}
@@ -60,6 +70,7 @@ public class Board extends JPanel{
 	@Override
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);
+		g.drawString(Integer.toString(counter), 20, 20);
 		drawGame(g);
 		drawUI(g);
 		if(game.getState().compareTo("start")==0)
@@ -96,7 +107,6 @@ public class Board extends JPanel{
 		g.setColor(new Color( 0, 0, 0));
 		g.setFont(new Font("Arial", 20, 20));
 		FontMetrics fm = g.getFontMetrics();
-		String finalStr = OVER + time.getFinalTime();
 		centreString(OVER, g, fm, Game.HEIGHT / 2);
 		centreString(REPLAY, g, fm, Game.HEIGHT / 2 + 50);
 		g.setColor(saved);
@@ -108,7 +118,7 @@ public class Board extends JPanel{
 	}
 
 	private void drawGame(Graphics g) {
-		game.draw(g);  
+		
 
 	}
 
@@ -133,6 +143,15 @@ public class Board extends JPanel{
 
 		}
 
+	}
+
+
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		counter += (timer.getDelay() / 1000);
+		//System.out.println(counter);
+		repaint();
+		
 	}
 
 }
