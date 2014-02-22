@@ -9,6 +9,13 @@ public class Squirrel extends Movable {
 		
 	}
 	
+	public void move() {
+		if (posX == 0) {
+			speed = 0;
+		}
+		posX -= speed;
+	}
+	
 	//jump
 	
 	public void jump() {
