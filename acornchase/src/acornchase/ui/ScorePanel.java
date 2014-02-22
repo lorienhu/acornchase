@@ -82,8 +82,8 @@ public class ScorePanel extends JPanel{
 
 	
 	
-	private void getFinalTIme() {
-		
+	public String getFinalTime() {
+		return clockTimeString; 
 	}
 	
 

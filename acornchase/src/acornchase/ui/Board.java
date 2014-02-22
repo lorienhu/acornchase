@@ -29,7 +29,7 @@ public class Board extends JPanel{
 		setFocusable(true);
 		time =  new ScorePanel();
 		setPreferredSize(new Dimension(Game.WIDTH, Game.HEIGHT));  
-		//setBackground(Color.GRAY); I want this to be the image
+		setBackground(Color.GRAY); //I want this to be the image
 		this.game = g;
 		
 
@@ -53,18 +53,18 @@ public class Board extends JPanel{
 		g.setFont(new Font("Arial", 20, 20));
 		FontMetrics fm = g.getFontMetrics();
 		String finalStr = OVER + time.getFinalTime();
-		centreString(OVER, g, fm, game.HEIGHT / 2);
-		centreString(REPLAY, g, fm, game.HEIGHT / 2 + 50);
+		centreString(OVER, g, fm, Game.HEIGHT / 2);
+		centreString(REPLAY, g, fm, Game.HEIGHT / 2 + 50);
 		g.setColor(saved);
 	}
 
 	private void centreString(String str, Graphics g, FontMetrics fm, int yPos) {
 		int width = fm.stringWidth(str);
-		g.drawString(str, (game.WIDTH - width) / 2, yPos);
+		g.drawString(str, (Game.WIDTH - width) / 2, yPos);
 	}
 
 	private void drawGame(Graphics g) {
-		game.draw(g);   //TODO in game
+		game.draw(g);  
 		
 	}
 
