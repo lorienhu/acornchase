@@ -25,7 +25,6 @@ public class Board extends JPanel{
 	private static final String REPLAY = "R to replay";
 	private Game game;
 	Button[] buttons;
-	ScorePanel score;
 	ScorePanel time;
 	TurboBlock turboBlock;
 	FreezeBlock freezeBlock;
@@ -63,6 +62,11 @@ public class Board extends JPanel{
 		super.paintComponent(g);
 		drawGame(g);
 		drawUI(g);
+		if(game.getState().compareTo("start")==0)
+		{
+			time = new ScorePanel(this.game);
+		}
+			
 		if (game.getState().compareTo("end")==0) {
 			gameOver(g);
 		}	      //  g.drawImage(bgImage, 0, 0, null);
@@ -81,6 +85,7 @@ public class Board extends JPanel{
 		blockBounds = new Rectangle(200, 330, 100, 50);
 		turboBounds = new Rectangle(300, 330, 100, 50);
 		scareBounds = new Rectangle(400, 330, 100, 50);
+		
 		// TODO Auto-generated method stub
 
 	}

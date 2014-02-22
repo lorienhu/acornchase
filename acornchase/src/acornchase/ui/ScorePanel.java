@@ -16,6 +16,7 @@ import acornchase.model.Game;
 
 
 
+@SuppressWarnings("serial")
 public class ScorePanel extends JPanel{
 	
 	// Text file and size of this textFIle
