@@ -1,5 +1,5 @@
 package acornchase;
 
-public class Power {
+public class Power extends Movable {
 
 }
