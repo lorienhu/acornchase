@@ -5,7 +5,7 @@ public class Power extends Drawable {
 	private int cooldown;
 	
 	public Power() {
-		cooldown = 
+		cooldown = 0;
 	}
 	
 }
