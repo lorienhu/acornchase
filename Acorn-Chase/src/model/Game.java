@@ -10,6 +10,8 @@ public class Game {
 	private Squirrel player;
 	private Squirrel enemy;
 	
+	private List<Power> powers;
+	
 	private int time;
 	
 	public String state;
@@ -19,7 +21,9 @@ public class Game {
 		time = 0;
 		player = new Squirrel();
 		enemy = new Squirrel();
-		
 	}
+	
+	// Update the game.
+	public void update() {}
 
 }
