@@ -1,5 +1,8 @@
 package acornchase.model;
 
+import java.util.List;
+import java.util.Random;
+
 //Represents an AcornGame.
 public class Game {
 
