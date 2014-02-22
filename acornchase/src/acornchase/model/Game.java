@@ -15,13 +15,6 @@ public class Game {
 	private Squirrel player;
 	private Squirrel enemy;
 	
-	private SlowPower slowPower;
-	private BlockPower blockPower;
-	private FreezePower freezePower;
-	private TurboPower turboPower;
-	private ReversePower reversePower;
-
-	
 	private int time;
 	public String state;
 	public boolean isOver;
