@@ -29,8 +29,8 @@ public class Game {
 	public Game() {
 		state = "start";
 		time = 0;
-		player = new Squirrel(PLAYER_START_POS, 0, new Color(10, 50, 188));
-		enemy = new Squirrel(ENEMY_START_POS, 1, new Color(10, 50, 188));
+		player = new Squirrel(PLAYER_START_POS, 0, Color.BLUE);
+		enemy = new Squirrel(ENEMY_START_POS, 1, Color.RED);
 	}
 	
 	// Update the game on a tick.
