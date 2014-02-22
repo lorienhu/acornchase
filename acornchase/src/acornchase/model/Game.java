@@ -64,7 +64,7 @@ public class Game {
 		
 	}
 	
-	public void draw() {
+	public void draw(Graphics g) {
 
 	}
 	
