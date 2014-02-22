@@ -1,14 +1,20 @@
 package acornchase.model;
 
+import java.awt.Color;
+import java.awt.Graphics;
+
 public abstract class Drawable {
 
 	protected int x_position;	
 	protected int y_position;
 	protected int HEIGHT;
 	protected int WIDTH;
+	protected Color colour;
 	
 	public Drawable () {
 	}
+	
+	public abstract void draw(Graphics g);
 	
 	public int getX() {
 		return x_position;
