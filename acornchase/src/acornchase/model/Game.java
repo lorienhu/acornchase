@@ -16,11 +16,8 @@ public class Game {
 	private Squirrel enemy;
 	
 	private List<Power> powers;
-	
 	private int time;
-	
 	public String state;
-	
 	public boolean isOver;
 	
 	public Game() {
