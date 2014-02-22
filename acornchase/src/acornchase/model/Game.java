@@ -16,6 +16,8 @@ public class Game {
 	
 	public String state;
 	
+	public boolean isOver;
+	
 	public Game() {
 		state = "start";
 		time = 0;
@@ -25,6 +27,11 @@ public class Game {
 	
 	// Update the game.
 	public void update() {}
+	
+	//is game over? 
+	public boolean isOver() {
+		return isOver;
+	}
 	 
 
 }
