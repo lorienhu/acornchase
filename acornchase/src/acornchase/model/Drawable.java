@@ -19,9 +19,9 @@ public abstract class Drawable {
 	}
 	
 	public boolean hasCollidedWith (int x, int y) {
-		if (x >= (x_location + WIDTH) ) return true;
-		if (y >= (y_location + HEIGHT)) return true;
-		else return false;
+		if ((x >= (x_location + WIDTH/2)) || (x <= (x_location - WIDTH/2)) ) return false;
+		if ((y >= (y_location + HEIGHT/2)) || (y <= (y_location - HEIGHT/2))) return false;
+		else return true;
 	}
 	
 }
