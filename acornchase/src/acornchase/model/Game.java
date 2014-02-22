@@ -1,5 +1,7 @@
 package acornchase.model;
 
+import java.awt.Graphics;
+import java.awt.event.MouseEvent;
 import java.util.List;
 import java.util.Random;
 
@@ -28,12 +30,30 @@ public class Game {
 		enemy = new Squirrel();
 	}
 	
+	public void mousePressed(MouseEvent e) {
+		
+	}
+	
+	public void draw(Graphics g) {
+
+	}
+	
 	// Update the game.
 	public void update() {}
 	
-	//is game over? 
-	public boolean isOver() {
-		return isOver;
+	// Retrieves state of game.
+	public String getState() {
+		return state;
+	}
+	
+	private void checkCollisions() {
+	}
+
+	public void checkExpiry(Graphics g) {
+	}
+	
+	private void checkGameOver()   {
+		
 	}
 	 
 
