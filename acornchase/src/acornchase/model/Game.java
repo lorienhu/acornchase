@@ -15,7 +15,13 @@ public class Game {
 	private Squirrel player;
 	private Squirrel enemy;
 	
-	private List<Power> powers;
+	private SlowPower slowPower;
+	private BlockPower blockPower;
+	private FreezePower freezePower;
+	private TurboPower turboPower;
+	private ReversePower reversePower;
+
+	
 	private int time;
 	public String state;
 	public boolean isOver;
@@ -27,8 +33,7 @@ public class Game {
 		enemy = new Squirrel();
 	}
 	
-	public void mousePressed(MouseEvent e) {
-		
+	public void applyPower(String power) {
 	}
 	
 	public void draw(Graphics g) {

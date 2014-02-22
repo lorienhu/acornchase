@@ -56,6 +56,7 @@ public class ScorePanel extends JPanel{
 			    }
 			});
 		
+				
 	}
 	
 	public void launchStopWatch()
@@ -73,7 +74,7 @@ public class ScorePanel extends JPanel{
 		add(bottomPanel, BorderLayout.SOUTH);
 
 		setSize(300,200);
-		setBackground(Color.orange);
+		setBackground(Color.blue);
 
 	}//end of launchClock
 
@@ -85,8 +86,10 @@ public class ScorePanel extends JPanel{
 		myTimer1.stop();
 	}
 	
-	public void getFinalTIme() {
-		
+
+	public String getFinalTime() {
+		return clockTimeString; 
+
 	}
 	
 
