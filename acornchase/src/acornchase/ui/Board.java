@@ -27,17 +27,17 @@ public class Board extends JPanel implements ActionListener{
 	private static final String REPLAY = "";
 	private Game game;
 	Button[] buttons;
-//<<<<<<< HEAD
+	//<<<<<<< HEAD
 	ScorePanel time;
 
 	TurboBlock turboBlock;
-	FreezeBlock freezeBlock;
+	JumpBlock jumpBlock;
 	SlowBlock slowBlock;
 	BlockBlock blockBlock;
 	ScareBlock scareBlock;
 	Rectangle scareBounds;
 	Rectangle turboBounds;
-	Rectangle freezeBounds;
+	Rectangle jumpBounds;
 	Rectangle slowBounds;
 	Rectangle blockBounds;
 	replayBlock reBlock;
@@ -50,7 +50,7 @@ public class Board extends JPanel implements ActionListener{
 
 	public Board(Game g) {
 		setPreferredSize(new Dimension(Game.WIDTH, Game.HEIGHT)); 
-		
+
 		setSize(new Dimension(Game.WIDTH, Game.HEIGHT));  
 		buttons = new Button[5];
 		addMouseListener(new MAdapter()); //for the point n click
@@ -60,13 +60,11 @@ public class Board extends JPanel implements ActionListener{
 		scareBlock = new ScareBlock();
 		blockBlock = new BlockBlock();
 		slowBlock = new SlowBlock();
-		freezeBlock = new FreezeBlock();
+		jumpBlock = new JumpBlock();
 		turboBlock = new TurboBlock();
 		reBlock = new replayBlock();
 		timer = new Timer(100, this);
 		timer.start();
-		
-
 
 	}
 
@@ -78,8 +76,8 @@ public class Board extends JPanel implements ActionListener{
 		Graphics2D g2d = (Graphics2D)g;
 		ImageIcon ii = new ImageIcon(this.getClass().getResource("space.jpg"));
 		Image image = ii.getImage();
-		g2d.drawImage(image, -(1178 - 640) + (counter2), 0, this);
-		if ((1178 - 640) == counter2) {
+		g2d.drawImage(image, -(1600 - 640) + (counter2), 0, this);
+		if ((1178 - 640) < counter2) {
 			counter2 = 0;
 		}
 		g.setColor(Color.WHITE);
@@ -91,41 +89,52 @@ public class Board extends JPanel implements ActionListener{
 		}	      //  g.drawImage(bgImage, 0, 0, null);
 	}
 
-//<<<<<<< HEAD
-
-	private void drawSprites(Graphics g) {
-//		Squirrel sq = game.getSquirrel();
-//
-//		Graphics2D g2d = (Graphics2D)g;
-//		ImageIcon ii = new ImageIcon(this.getClass().getResource("squirrel.png"));
-//		Image image = ii.getImage();
-//		g2d.drawImage(image, sq.getX() - (sq.getWidth() / 2), sq.getY() - (sq.getHeight() / 2),  this);
-		
-		
-
-		
-		
-	}
-//=======
-//>>>>>>> branch 'master' of https://github.com/lsom/acornchase.git
-
-
 	private void drawUI(Graphics g) {
 		int height = game.HEIGHT - 70;
 		int width = game.WIDTH / 5;
 		Graphics2D g2d = (Graphics2D)g;
-		g2d.drawImage(slowBlock.getImage(), 0, height, this);
-		g2d.drawImage(freezeBlock.getImage(), width, height, this);
-		g2d.drawImage(blockBlock.getImage(), width * 2, height, this);
-		g2d.drawImage(turboBlock.getImage(), width * 3, height, this);
-		g2d.drawImage(scareBlock.getImage(), width * 4, height, this);
+		ImageIcon ii = new ImageIcon(this.getClass().getResource("unready.png"));
+		Image img = ii.getImage();
+		if (game.blockPower.isReady()) {
+			g2d.drawImage(blockBlock.getImage(), width * 2, height, this);
+		} else {
+			g2d.drawImage(img, width * 2, height, this);
+		}
+		if (game.jumpPower.isReady()) {
+			g2d.drawImage(jumpBlock.getImage(), width, height, this);
+
+		} else {
+			g2d.drawImage(img, width, height, this);
+		}
+		if (game.scarePower.isReady()) {
+			g2d.drawImage(scareBlock.getImage(), width * 4, height, this);
+
+		} else {
+			g2d.drawImage(img, width, height, this);
+		}
+		if (game.slowPower.isReady()) {
+			g2d.drawImage(slowBlock.getImage(), 0, height, this);
+
+		} else {
+			g2d.drawImage(img, 0, height, this);
+		}
+		if (game.turboPower.isReady()) {
+			g2d.drawImage(turboBlock.getImage(), width * 3, height, this);
+
+		} else  {
+			g2d.drawImage(img, width * 3, height, this);
+		}
+		
 		slowBounds = new Rectangle(0, height, 100, 50);
-		freezeBounds = new Rectangle(width, height, 100, 50);
+		jumpBounds = new Rectangle(width, height, 100, 50);
 		blockBounds = new Rectangle(width * 2, height, 100, 50);
 		turboBounds = new Rectangle(width * 3, height, 100, 50);
 		scareBounds = new Rectangle(width * 4, height, 100, 50);
+//<<<<<<< HEAD
 		
 
+//=======
+//>>>>>>> branch 'master' of https://github.com/lsom/acornchase.git
 	}
 
 
@@ -161,35 +170,57 @@ public class Board extends JPanel implements ActionListener{
 		public void mouseClicked(MouseEvent e) {
 			if (scareBounds.contains(new Point(e.getX(), e.getY()))) {
 				System.out.println("scareBounds");
+				Sound sound = new Sound("scare.wav");
+				if (game.scarePower.isReady()) {
+					sound.play();
+				}
 				game.applyPower("scare");
 			}
 			if (turboBounds.contains(new Point(e.getX(), e.getY()))) {
 				System.out.println("turboBounds");
+				Sound sound = new Sound("turbo.wav");
+				if (game.scarePower.isReady()) {
+					sound.play();
+				}
 				game.applyPower("turbo");
 
 			}
-			if (freezeBounds.contains(new Point(e.getX(), e.getY()))) {
-				System.out.println("freezeBounds");
-				game.applyPower("freeze");
-
+			if (jumpBounds.contains(new Point(e.getX(), e.getY()))) {
+				System.out.println("jumpBounds");
+				Sound sound = new Sound("jump.wav");
+				if (game.scarePower.isReady()) {
+					sound.play();
+				}
+				game.applyPower("jump");
 			}
 			if (slowBounds.contains(new Point(e.getX(), e.getY()))) {
 				System.out.println("slowBounds");
+				Sound sound = new Sound("slow.wav");
+				if (game.scarePower.isReady()) {
+					sound.play();
+				}
 				game.applyPower("slow");
 			}
 			if (blockBounds.contains(new Point(e.getX(), e.getY()))) {
 				System.out.println("blockBounds");
+				Sound sound = new Sound("defense.wav");
+				if (game.scarePower.isReady()) {
+					sound.play();
+				}
 				game.applyPower("block");
 			}
+//<<<<<<< HEAD
 			if(replayBounds.contains(new Point(e.getX(), e.getY())))
 			{
 				System.out.println("reBounds");
 				reset();
 			}
 
+//=======
+//>>>>>>> branch 'master' of https://github.com/lsom/acornchase.git
 		}
-
 	}
+//<<<<<<< HEAD
 
 	public void reset()
 	{
@@ -197,6 +228,8 @@ public class Board extends JPanel implements ActionListener{
 		timer = new Timer(100, this);
 		timer.start();
 	}
+//=======
+//>>>>>>> branch 'master' of https://github.com/lsom/acornchase.git
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
@@ -207,10 +240,13 @@ public class Board extends JPanel implements ActionListener{
 		} else {
 			counterweight++;
 		}
-		counter2 += 1;
+		counter2 += 5;
 		game.update();
+
+		repaint();		
+
 		repaint();
-		
+
 	}
 
 }
