@@ -42,7 +42,7 @@ public class Game {
 		player.move();
 		enemy.move();
 		
-		System.out.println();
+		System.out.println(player.isBoink(enemy));
 		
 	}
 	
