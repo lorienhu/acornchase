@@ -26,7 +26,7 @@ public abstract class Drawable {
 
 	public int getHeight() {
 		return HEIGHT;
-	}
+	} 
 	
 	public int getWidth() {
 		return WIDTH;
