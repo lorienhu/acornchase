@@ -73,7 +73,7 @@ public class Board extends JPanel implements ActionListener{
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		Graphics2D g2d = (Graphics2D)g;
-		ImageIcon ii = new ImageIcon(this.getClass().getResource("space.jpg"));
+		ImageIcon ii = new ImageIcon(this.getClass().getResource("bg.jpg"));
 		Image image = ii.getImage();
 		g2d.drawImage(image, -(1600 - 640) + (counter2), 0, this);
 		if ((1178 - 640) < counter2) {
