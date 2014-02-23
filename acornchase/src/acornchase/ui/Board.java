@@ -41,12 +41,14 @@ public class Board extends JPanel implements ActionListener{
 	Rectangle slowBounds;
 	Rectangle blockBounds;
 	Timer timer;
+	int counter2 = 0;
 	int counter = 0;
 	private int counterweight;
 
 
 	public Board(Game g) {
-		setPreferredSize(new Dimension(Game.WIDTH, Game.HEIGHT));  
+		setPreferredSize(new Dimension(Game.WIDTH, Game.HEIGHT)); 
+		
 		setSize(new Dimension(Game.WIDTH, Game.HEIGHT));  
 		buttons = new Button[5];
 		addMouseListener(new MAdapter()); //for the point n click
@@ -70,6 +72,13 @@ public class Board extends JPanel implements ActionListener{
 	@Override
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);
+		Graphics2D g2d = (Graphics2D)g;
+		ImageIcon ii = new ImageIcon(this.getClass().getResource("space.jpg"));
+		Image image = ii.getImage();
+		g2d.drawImage(image, -(1178 - 640) + (counter2), 0, this);
+		if ((1178 - 640) == counter2) {
+			counter2 = 0;
+		}
 		g.setColor(Color.WHITE);
 		g.drawString(Integer.toString(counter), 20, 20);
 		drawGame(g);
@@ -178,6 +187,7 @@ public class Board extends JPanel implements ActionListener{
 		} else {
 			counterweight++;
 		}
+		counter2 += 1;
 		game.update();
 		repaint();
 		
