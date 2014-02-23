@@ -4,6 +4,8 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.MouseEvent;
 import java.util.List;
+import java.util.Observable;
+import java.util.Observer;
 import java.util.Random;
 
 //Represents an AcornGame.
@@ -40,9 +42,6 @@ public class Game {
 		// Check for collisions.
 		// Check for gameover.
 		player.move();
-		enemy.move();
-		
-		System.out.println(player.isBoink(enemy));
 		enemy.move();		
 		checkGameOver();
 		
