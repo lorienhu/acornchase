@@ -8,12 +8,15 @@ import java.util.Observable;
 import java.util.Observer;
 import java.util.Random;
 
+import acornchase.ui.Launcher;
+
 //Represents an AcornGame.
 public class Game {
 	
 	public static final int WIDTH = 640;
 	public static final int HEIGHT =  480;
 	public static final Random RND = new Random();
+
 	
 	private Squirrel player;
 	private Squirrel enemy;
@@ -35,6 +38,7 @@ public class Game {
 
 	
 	public Game() {
+		
 		state = "start";
 		time = 0;
 		player = new Squirrel(PLAYER_START_POS, 0, Color.BLUE);
@@ -132,5 +136,4 @@ public class Game {
 		return player;
 	}
 	 
-
 }
