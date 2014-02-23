@@ -83,17 +83,18 @@ public class Board extends JPanel implements ActionListener{
 
 	private void drawUI(Graphics g) {
 		int height = game.HEIGHT - 70;
+		int width = game.WIDTH / 5;
 		Graphics2D g2d = (Graphics2D)g;
 		g2d.drawImage(slowBlock.getImage(), 0, height, this);
-		g2d.drawImage(freezeBlock.getImage(), 100, height, this);
-		g2d.drawImage(blockBlock.getImage(), 200, height, this);
-		g2d.drawImage(turboBlock.getImage(), 300, height, this);
-		g2d.drawImage(scareBlock.getImage(), 400, height, this);
+		g2d.drawImage(freezeBlock.getImage(), width, height, this);
+		g2d.drawImage(blockBlock.getImage(), width * 2, height, this);
+		g2d.drawImage(turboBlock.getImage(), width * 3, height, this);
+		g2d.drawImage(scareBlock.getImage(), width * 4, height, this);
 		slowBounds = new Rectangle(0, height, 100, 50);
-		freezeBounds = new Rectangle(100, height, 100, 50);
-		blockBounds = new Rectangle(200, height, 100, 50);
-		turboBounds = new Rectangle(300, height, 100, 50);
-		scareBounds = new Rectangle(400, height, 100, 50);
+		freezeBounds = new Rectangle(width, height, 100, 50);
+		blockBounds = new Rectangle(width * 2, height, 100, 50);
+		turboBounds = new Rectangle(width * 3, height, 100, 50);
+		scareBounds = new Rectangle(width * 4, height, 100, 50);
 		
 		// TODO Auto-generated method stub
 
