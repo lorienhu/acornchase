@@ -167,7 +167,6 @@ public class Board extends JPanel implements ActionListener{
 		game.draw(g);
 	}
 
-
 	private class MAdapter extends MouseAdapter {
 		public void mouseClicked(MouseEvent e) {
 			if (scareBounds.contains(new Point(e.getX(), e.getY()))) {
@@ -179,7 +178,7 @@ public class Board extends JPanel implements ActionListener{
 			}
 			if (turboBounds.contains(new Point(e.getX(), e.getY()))) {
 				System.out.println("turboBounds");
-				if (game.scarePower.isReady()) { 
+				if (game.turboPower.isReady()) { 
 					TurboSound.play();
 				}
 				game.applyPower("turbo");
@@ -187,21 +186,21 @@ public class Board extends JPanel implements ActionListener{
 			}
 			if (jumpBounds.contains(new Point(e.getX(), e.getY()))) {
 				System.out.println("jumpBounds");
-				if (game.scarePower.isReady()) {
+				if (game.jumpPower.isReady()) {
 					JumpSound.play();
 				}
 				game.applyPower("jump");
 			}
 			if (slowBounds.contains(new Point(e.getX(), e.getY()))) {
 				System.out.println("slowBounds");
-				if (game.scarePower.isReady()) {
+				if (game.slowPower.isReady()) {
 					SlowSound.play();
 				}
 				game.applyPower("slow");
 			}
 			if (blockBounds.contains(new Point(e.getX(), e.getY()))) {
 				System.out.println("blockBounds");
-				if (game.scarePower.isReady()) {
+				if (game.blockPower.isReady()) {
 					BlockSound.play();
 				}
 				game.applyPower("block");
