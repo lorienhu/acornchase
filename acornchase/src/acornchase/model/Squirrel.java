@@ -12,6 +12,7 @@ public class Squirrel extends Movable {
 
 	private int base_speed;
 	public JumpPower jumpPower;
+	private int basePos;
 
 	public Squirrel(int position, int base_speed, Color col) {
 		this.CONST_SPEED = 10;
@@ -23,6 +24,7 @@ public class Squirrel extends Movable {
 		this.colour = col;
 		this.HEIGHT = 50;
 		this.WIDTH = 80;
+		basePos = position;
 		
 		jumpPower = new JumpPower(this);
 	}
@@ -62,7 +64,7 @@ public class Squirrel extends Movable {
 	public void jump() {
 		if (jumpPower.isReady()) {
 			y_speed = 10;
-			jumpPower.activate();
+			jumpPower.activate(3);
 			System.out.println("yo");
 		}
 	}
@@ -82,6 +84,11 @@ public class Squirrel extends Movable {
 		// TODO Auto-generated method stub
 		g.fillRect (x_position - WIDTH / 2, y_position - HEIGHT / 2, WIDTH, HEIGHT);
 		g.setColor(colour);
+	}
+
+	public void reset() {
+		x_position = basePos;
+		
 	}
 
 }

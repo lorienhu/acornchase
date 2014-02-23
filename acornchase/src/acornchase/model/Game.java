@@ -85,30 +85,38 @@ public class Game {
 		else if (power.equals("turbo") && turboPower.isReady()) {
 			turbo();
 		}
-
 		else if (power.equals("slow") && slowPower.isReady()) {
 			slow();
 		}
 		else if (power.equals("block") && blockPower.isReady()) {
 			block();
 		}
+		else if (power.equals("scare") && scarePower.isReady()) {
+			scare();}
+	}
+
+	private void scare() {
+		enemy.reset();
+		scarePower.activate(10);
+		
+		
 	}
 
 	// Add speed to squirrel for turbopower length seconds.
 	public void turbo() {
 		enemy.goBack();
-		turboPower.activate();
+		turboPower.activate(3);
 	}
 	
 	// Block the squirrel from dying.
 	public void block() {
-		blockPower.activate();
+		blockPower.activate(4);
 	}
 	
 	// Lower the speed of the opposing squirrel.
 	public void slow() {
 		enemy.slow();
-		slowPower.activate();
+		slowPower.activate(3);
 
 		
 	}
