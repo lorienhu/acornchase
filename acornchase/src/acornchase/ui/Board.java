@@ -31,13 +31,13 @@ public class Board extends JPanel implements ActionListener{
 	ScorePanel time;
 
 	TurboBlock turboBlock;
-	FreezeBlock freezeBlock;
+	JumpBlock jumpBlock;
 	SlowBlock slowBlock;
 	BlockBlock blockBlock;
 	ScareBlock scareBlock;
 	Rectangle scareBounds;
 	Rectangle turboBounds;
-	Rectangle freezeBounds;
+	Rectangle jumpBounds;
 	Rectangle slowBounds;
 	Rectangle blockBounds;
 	Timer timer;
@@ -58,7 +58,7 @@ public class Board extends JPanel implements ActionListener{
 		scareBlock = new ScareBlock();
 		blockBlock = new BlockBlock();
 		slowBlock = new SlowBlock();
-		freezeBlock = new FreezeBlock();
+		jumpBlock = new JumpBlock();
 		turboBlock = new TurboBlock();
 		timer = new Timer(100, this);
 		timer.start();
@@ -75,8 +75,8 @@ public class Board extends JPanel implements ActionListener{
 		Graphics2D g2d = (Graphics2D)g;
 		ImageIcon ii = new ImageIcon(this.getClass().getResource("space.jpg"));
 		Image image = ii.getImage();
-		g2d.drawImage(image, -(1178 - 640) + (counter2), 0, this);
-		if ((1178 - 640) == counter2) {
+		g2d.drawImage(image, -(1600 - 640) + (counter2), 0, this);
+		if ((1178 - 640) < counter2) {
 			counter2 = 0;
 		}
 		g.setColor(Color.WHITE);
@@ -93,12 +93,12 @@ public class Board extends JPanel implements ActionListener{
 		int width = game.WIDTH / 5;
 		Graphics2D g2d = (Graphics2D)g;
 		g2d.drawImage(slowBlock.getImage(), 0, height, this);
-		g2d.drawImage(freezeBlock.getImage(), width, height, this);
+		g2d.drawImage(jumpBlock.getImage(), width, height, this);
 		g2d.drawImage(blockBlock.getImage(), width * 2, height, this);
 		g2d.drawImage(turboBlock.getImage(), width * 3, height, this);
 		g2d.drawImage(scareBlock.getImage(), width * 4, height, this);
 		slowBounds = new Rectangle(0, height, 100, 50);
-		freezeBounds = new Rectangle(width, height, 100, 50);
+		jumpBounds = new Rectangle(width, height, 100, 50);
 		blockBounds = new Rectangle(width * 2, height, 100, 50);
 		turboBounds = new Rectangle(width * 3, height, 100, 50);
 		scareBounds = new Rectangle(width * 4, height, 100, 50);
@@ -141,7 +141,7 @@ public class Board extends JPanel implements ActionListener{
 				game.applyPower("turbo");
 
 			}
-			if (freezeBounds.contains(new Point(e.getX(), e.getY()))) {
+			if (jumpBounds.contains(new Point(e.getX(), e.getY()))) {
 				System.out.println("jumpBounds");
 				game.applyPower("jump");
 

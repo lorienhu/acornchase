@@ -4,10 +4,10 @@ import java.awt.Image;
 
 import javax.swing.ImageIcon;
 
-public class FreezeBlock {
+public class JumpBlock {
 	Image image;
-	public FreezeBlock() {
-		ImageIcon ii = new ImageIcon(this.getClass().getResource("Freeze.png"));
+	public JumpBlock() {
+		ImageIcon ii = new ImageIcon(this.getClass().getResource("Jump.png"));
 		image = ii.getImage();
 	}
 	public Image getImage() {
