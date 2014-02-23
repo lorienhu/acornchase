@@ -26,7 +26,7 @@ public abstract class Drawable {
 
 	public int getHeight() {
 		return HEIGHT;
-	}
+	} 
 	
 	public int getWidth() {
 		return WIDTH;
@@ -45,6 +45,8 @@ public abstract class Drawable {
 	
 	//returns true if two Drawables have collided
 	public boolean isBoink(Drawable a, Drawable b) {
+		int dA = a.getX();
+		int dB = a.getX();
 		
 		return true;
 	}

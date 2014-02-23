@@ -27,6 +27,9 @@ public class Board extends JPanel implements ActionListener{
 	private static final String REPLAY = "R to replay";
 	private Game game;
 	Button[] buttons;
+//<<<<<<< HEAD
+	ScorePanel time;
+
 	TurboBlock turboBlock;
 	FreezeBlock freezeBlock;
 	SlowBlock slowBlock;
@@ -43,11 +46,12 @@ public class Board extends JPanel implements ActionListener{
 
 
 	public Board(Game g) {
+		setPreferredSize(new Dimension(Game.WIDTH, Game.HEIGHT));  
+		setSize(new Dimension(Game.WIDTH, Game.HEIGHT));  
 		buttons = new Button[5];
 		addMouseListener(new MAdapter()); //for the point n click
 		setFocusable(true);
-		setPreferredSize(new Dimension(Game.WIDTH, Game.HEIGHT));  
-		setBackground(Color.GRAY); //I want this to be the image
+		setBackground(Color.BLACK); //I want this to be the image
 		this.game = g;
 		scareBlock = new ScareBlock();
 		blockBlock = new BlockBlock();
@@ -89,6 +93,7 @@ public class Board extends JPanel implements ActionListener{
 		blockBounds = new Rectangle(200, 330, 100, 50);
 		turboBounds = new Rectangle(300, 330, 100, 50);
 		scareBounds = new Rectangle(400, 330, 100, 50);
+		
 		// TODO Auto-generated method stub
 
 	}

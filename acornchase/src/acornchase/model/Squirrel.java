@@ -19,8 +19,8 @@ public class Squirrel extends Movable {
 		this.x_position = position;
 		this.y_position = 100;
 		this.colour = col;
-		this.HEIGHT = 100;
-		this.WIDTH = 50;
+		this.HEIGHT = 50;
+		this.WIDTH = 80;
 
 	}
 	
@@ -53,7 +53,6 @@ public class Squirrel extends Movable {
 	@Override
 	public void draw(Graphics g) {
 		// TODO Auto-generated method stub
-		System.out.println("got here");
 		g.fillRect (x_position - WIDTH / 2, y_position - HEIGHT / 2, WIDTH, HEIGHT);
 		g.setColor(colour);
 	}
