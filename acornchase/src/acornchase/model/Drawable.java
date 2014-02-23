@@ -46,11 +46,11 @@ public abstract class Drawable {
 	}
 	 
 	//returns true if two Drawables have collided
-	public boolean isBoink(Drawable a, Drawable b) {
+	public boolean isBoink(Drawable a) {
 		int xA = a.getX() - a.getWidth()/2; int yA = a.getY() + a.getHeight()/2; 
 		int wA = a.getWidth(); int hA = a.getHeight();
-		int xB = b.getX() - b.getWidth()/2; int yB = b.getY() + b.getHeight()/2; 
-		int wB = b.getWidth(); int hB = b.getHeight();
+		int xB = this.getX() - this.getWidth()/2; int yB = this.getY() + this.getHeight()/2; 
+		int wB = this.getWidth(); int hB = this.getHeight();
 		
 		Rectangle rA = new Rectangle(xA, yA, wA, hA);
 	    Rectangle rB = new Rectangle(xB, yB, wB, hB);
