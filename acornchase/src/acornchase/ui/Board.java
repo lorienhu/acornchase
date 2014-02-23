@@ -75,8 +75,8 @@ public class Board extends JPanel implements ActionListener{
 		Graphics2D g2d = (Graphics2D)g;
 		ImageIcon ii = new ImageIcon(this.getClass().getResource("space.jpg"));
 		Image image = ii.getImage();
-		g2d.drawImage(image, -(1600 - 700) + (counter2), 0, this);
-		if ((1600 - 700) == counter2) {
+		g2d.drawImage(image, -(1178 - 640) + (counter2), 0, this);
+		if ((1178 - 640) == counter2) {
 			counter2 = 0;
 		}
 		g.setColor(Color.WHITE);
