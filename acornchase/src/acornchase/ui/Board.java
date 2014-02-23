@@ -161,34 +161,44 @@ public class Board extends JPanel implements ActionListener{
 		public void mouseClicked(MouseEvent e) {
 			if (scareBounds.contains(new Point(e.getX(), e.getY()))) {
 				System.out.println("scareBounds");
-				Sound turbo = new Sound("scare.wav");
-				turbo.play();
+				Sound sound = new Sound("scare.wav");
+				if (game.scarePower.isReady()) {
+					sound.play();
+				}
 				game.applyPower("scare");
 			}
 			if (turboBounds.contains(new Point(e.getX(), e.getY()))) {
 				System.out.println("turboBounds");
-				Sound turbo = new Sound("turbo.wav");
-				turbo.play();
+				Sound sound = new Sound("turbo.wav");
+				if (game.scarePower.isReady()) {
+					sound.play();
+				}
 				game.applyPower("turbo");
 
 			}
 			if (jumpBounds.contains(new Point(e.getX(), e.getY()))) {
 				System.out.println("jumpBounds");
-				Sound bounce = new Sound("jump.wav");
-				bounce.play();
+				Sound sound = new Sound("jump.wav");
+				if (game.scarePower.isReady()) {
+					sound.play();
+				}
 				game.applyPower("jump");
 
 			}
 			if (slowBounds.contains(new Point(e.getX(), e.getY()))) {
 				System.out.println("slowBounds");
-				Sound bounce = new Sound("slow.wav");
-				bounce.play();
+				Sound sound = new Sound("slow.wav");
+				if (game.scarePower.isReady()) {
+					sound.play();
+				}
 				game.applyPower("slow");
 			}
 			if (blockBounds.contains(new Point(e.getX(), e.getY()))) {
 				System.out.println("blockBounds");
-				Sound bounce = new Sound("defense.wav");
-				bounce.play();
+				Sound sound = new Sound("defense.wav");
+				if (game.scarePower.isReady()) {
+					sound.play();
+				}
 				game.applyPower("block");
 			}
 
