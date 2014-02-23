@@ -86,9 +86,9 @@ public class Board extends JPanel implements ActionListener{
 		if ((1280 - 640) < counter2) {
 			counter2 = 0;
 		}
-		g.setFont(new Font("Serif", Font.BOLD , 25));
+		g.setFont(new Font("Serif", Font.BOLD , 75));
 		g.setColor(Color.BLACK);
-		g.drawString(Integer.toString(counter), 20, 20);
+		g.drawString(Integer.toString(counter), 100, 100);
 		drawGame(g);
 		drawUI(g);
 		if (game.getState().compareTo("end")==0) {
