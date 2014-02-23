@@ -142,8 +142,8 @@ public class Board extends JPanel implements ActionListener{
 
 			}
 			if (freezeBounds.contains(new Point(e.getX(), e.getY()))) {
-				System.out.println("freezeBounds");
-				game.applyPower("freeze");
+				System.out.println("jumpBounds");
+				game.applyPower("jump");
 
 			}
 			if (slowBounds.contains(new Point(e.getX(), e.getY()))) {

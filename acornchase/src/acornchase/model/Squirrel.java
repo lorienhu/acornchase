@@ -22,7 +22,6 @@ public class Squirrel extends Movable {
 		this.colour = col;
 		this.HEIGHT = 50;
 		this.WIDTH = 80;
-
 	}
 
 	public void slow() {
@@ -46,10 +45,9 @@ public class Squirrel extends Movable {
 	}
 	
 	//jump
-
-	
 	public void jump() {
-		
+		y_speed = 20;
+		y_position = 200;
 	}
 	
 	//how fast the squirrel is moving
