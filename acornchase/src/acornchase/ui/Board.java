@@ -83,12 +83,12 @@ public class Board extends JPanel implements ActionListener{
 
 
 	private void drawSprites(Graphics g) {
-		Squirrel sq = game.getSquirrel();
-
-		Graphics2D g2d = (Graphics2D)g;
-		ImageIcon ii = new ImageIcon(this.getClass().getResource("squirrel.png"));
-		Image image = ii.getImage();
-		g2d.drawImage(image, sq.getX() - (sq.getWidth() / 2), sq.getY() - (sq.getHeight() / 2),  this);
+//		Squirrel sq = game.getSquirrel();
+//
+//		Graphics2D g2d = (Graphics2D)g;
+//		ImageIcon ii = new ImageIcon(this.getClass().getResource("squirrel.png"));
+//		Image image = ii.getImage();
+//		g2d.drawImage(image, sq.getX() - (sq.getWidth() / 2), sq.getY() - (sq.getHeight() / 2),  this);
 		
 		
 
