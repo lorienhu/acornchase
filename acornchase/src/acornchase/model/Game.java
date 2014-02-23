@@ -42,6 +42,8 @@ public class Game {
 		player.move();
 		enemy.move();
 		
+		checkGameOver();
+		
 	}
 	
 	
@@ -83,15 +85,14 @@ public class Game {
 	public String getState() {
 		return state;
 	}
-	
-	private void checkCollisions() {
-	}
 
 	public void checkExpiry(Graphics g) {
 	}
 	
 	private void checkGameOver()   {
-		
+		if (player.isBoink(enemy)) {
+			state = "end";
+		}
 	}
 	
 	public Squirrel getSquirrel() {
