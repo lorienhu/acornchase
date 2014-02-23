@@ -45,7 +45,7 @@ public class Game {
 		state = "start";
 		time = 0;
 		player = new Squirrel(PLAYER_START_POS, 0, Color.BLUE, jp, "player");
-		enemy = new Squirrel(ENEMY_START_POS, 3, Color.RED, jp, "enemy");
+		enemy = new Squirrel(ENEMY_START_POS, 2, Color.RED, jp, "enemy");
 		
 		slowPower = new Power(0, 3*10);
 		jumpPower = player.jumpPower;
