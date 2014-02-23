@@ -167,6 +167,7 @@ public class Board extends JPanel implements ActionListener{
 		if (counterweight == 10) {
 			counter +=1;
 			counterweight = 1;
+			game.updateSlow();
 		} else {
 			counterweight++;
 		}

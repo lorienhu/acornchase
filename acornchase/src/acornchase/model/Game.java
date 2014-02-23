@@ -16,7 +16,7 @@ public class Game {
 	private Squirrel player;
 	private Squirrel enemy;
 	
-	public static final int PLAYER_START_POS = (int) (0.3*WIDTH);
+	public static final int PLAYER_START_POS = (int) (0.2*WIDTH);
 	public static final int ENEMY_START_POS = (int) (0.8*WIDTH);
 
 	
@@ -30,7 +30,7 @@ public class Game {
 		state = "start";
 		time = 0;
 		player = new Squirrel(PLAYER_START_POS, 0, Color.BLUE);
-		enemy = new Squirrel(ENEMY_START_POS, 10, Color.RED);
+		enemy = new Squirrel(ENEMY_START_POS, 1, Color.RED);
 	}
 	
 	// Update the game on a tick.
@@ -40,12 +40,18 @@ public class Game {
 		// Check for collisions.
 		// Check for gameover.
 		player.move();
-		enemy.move();
-		
+		enemy.move();		
 		checkGameOver();
 		
 	}
-	
+
+	public void updateSlow() {
+		// Tick each power.
+		// Move each squirrel.
+		// Check for collisions.
+		// Check for gameover.
+		enemy.speedUp();		
+	}
 	
 	public void applyPower(String power) {
 		if (power.equals("jump")) {
@@ -89,7 +95,7 @@ public class Game {
 	public void checkExpiry(Graphics g) {
 	}
 	
-	private void checkGameOver()   {
+	private void checkGameOver() {
 		if (player.isBoink(enemy)) {
 			state = "end";
 		}
