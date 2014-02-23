@@ -62,9 +62,6 @@ public class Board extends JPanel implements ActionListener{
 		turboBlock = new TurboBlock();
 		timer = new Timer(100, this);
 		timer.start();
-		
-
-
 	}
 
 
@@ -102,9 +99,6 @@ public class Board extends JPanel implements ActionListener{
 		blockBounds = new Rectangle(width * 2, height, 100, 50);
 		turboBounds = new Rectangle(width * 3, height, 100, 50);
 		scareBounds = new Rectangle(width * 4, height, 100, 50);
-		
-		// TODO Auto-generated method stub
-
 	}
 
 
@@ -156,7 +150,6 @@ public class Board extends JPanel implements ActionListener{
 					sound.play();
 				}
 				game.applyPower("jump");
-
 			}
 			if (slowBounds.contains(new Point(e.getX(), e.getY()))) {
 				System.out.println("slowBounds");
@@ -174,11 +167,8 @@ public class Board extends JPanel implements ActionListener{
 				}
 				game.applyPower("block");
 			}
-
 		}
-
 	}
-
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
@@ -191,8 +181,7 @@ public class Board extends JPanel implements ActionListener{
 		}
 		counter2 += 5;
 		game.update();
-		repaint();
-		
+		repaint();		
 	}
 
 }
