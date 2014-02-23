@@ -26,11 +26,11 @@ public class Game {
 	public String state;
 	public boolean isOver;
 	
-	private Power slowPower;
-	private Power jumpPower;
-	private Power turboPower;
-	private Power blockPower;
-	private Power scarePower;
+	public Power slowPower;
+	public Power jumpPower;
+	public Power turboPower;
+	public Power blockPower;
+	public Power scarePower;
 
 
 	
