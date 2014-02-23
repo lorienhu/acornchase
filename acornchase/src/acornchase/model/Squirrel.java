@@ -14,6 +14,7 @@ public class Squirrel extends Movable {
 
 	public Squirrel(int position, int base_speed, Color col) {
 		this.CONST_SPEED = 10;
+		this.base_speed = base_speed;
 		this.x_speed = base_speed;
 		this.y_speed = 0;
 		this.x_position = position;
@@ -23,8 +24,16 @@ public class Squirrel extends Movable {
 		this.WIDTH = 80;
 
 	}
+
+	public void slow() {
+		x_speed = x_speed-2;
+	}
 	
-	//jump 
+	public void speedUp() {
+		if (x_speed<base_speed*4) {
+			x_speed++;
+		}
+	}
 
 	public void move() {
 	x_position -= x_speed;

@@ -152,18 +152,25 @@ public class Board extends JPanel implements ActionListener{
 		public void mouseClicked(MouseEvent e) {
 			if (scareBounds.contains(new Point(e.getX(), e.getY()))) {
 				System.out.println("scareBounds");
+				game.applyPower("scare");
 			}
 			if (turboBounds.contains(new Point(e.getX(), e.getY()))) {
 				System.out.println("turboBounds");
+				game.applyPower("turbo");
+
 			}
 			if (freezeBounds.contains(new Point(e.getX(), e.getY()))) {
 				System.out.println("freezeBounds");
+				game.applyPower("freeze");
+
 			}
 			if (slowBounds.contains(new Point(e.getX(), e.getY()))) {
 				System.out.println("slowBounds");
+				game.applyPower("slow");
 			}
 			if (blockBounds.contains(new Point(e.getX(), e.getY()))) {
 				System.out.println("blockBounds");
+				game.applyPower("block");
 			}
 
 		}
@@ -176,6 +183,7 @@ public class Board extends JPanel implements ActionListener{
 		if (counterweight == 10) {
 			counter +=1;
 			counterweight = 1;
+			game.updateSlow();
 		} else {
 			counterweight++;
 		}
