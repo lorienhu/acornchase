@@ -94,30 +94,30 @@ public class Board extends JPanel implements ActionListener{
 		Graphics2D g2d = (Graphics2D)g;
 		ImageIcon ii = new ImageIcon(this.getClass().getResource("unready.png"));
 		Image img = ii.getImage();
-		if (!game.blockPower.isActive()) {
+		if (game.blockPower.isReady()) {
 			g2d.drawImage(blockBlock.getImage(), width * 2, height, this);
 		} else {
 			g2d.drawImage(img, width * 2, height, this);
 		}
-		if (!game.jumpPower.isActive()) {
+		if (game.jumpPower.isReady()) {
 			g2d.drawImage(jumpBlock.getImage(), width, height, this);
 
 		} else {
 			g2d.drawImage(img, width, height, this);
 		}
-		if (!game.scarePower.isActive()) {
+		if (game.scarePower.isReady()) {
 			g2d.drawImage(scareBlock.getImage(), width * 4, height, this);
 
 		} else {
 			g2d.drawImage(img, width, height, this);
 		}
-		if (!game.slowPower.isActive()) {
+		if (game.slowPower.isReady()) {
 			g2d.drawImage(slowBlock.getImage(), 0, height, this);
 
 		} else {
 			g2d.drawImage(img, 0, height, this);
 		}
-		if (!game.turboPower.isActive()) {
+		if (game.turboPower.isReady()) {
 			g2d.drawImage(turboBlock.getImage(), width * 3, height, this);
 
 		} else  {
