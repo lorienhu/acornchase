@@ -4,10 +4,10 @@ import java.awt.Graphics;
 import java.util.Observable;
 
 public class Power extends Drawable {
-	private int timer;
-	private int length;
-	private int cooldown;
-	private String status;
+	protected int timer;
+	protected int length;
+	protected int cooldown;
+	protected String status;
 
 	public Power(int l, int cd) {
 		timer = 0;
