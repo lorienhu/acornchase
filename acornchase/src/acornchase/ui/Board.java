@@ -88,25 +88,6 @@ public class Board extends JPanel implements ActionListener{
 		}	      //  g.drawImage(bgImage, 0, 0, null);
 	}
 
-//<<<<<<< HEAD
-
-	private void drawSprites(Graphics g) {
-//		Squirrel sq = game.getSquirrel();
-//
-//		Graphics2D g2d = (Graphics2D)g;
-//		ImageIcon ii = new ImageIcon(this.getClass().getResource("squirrel.png"));
-//		Image image = ii.getImage();
-//		g2d.drawImage(image, sq.getX() - (sq.getWidth() / 2), sq.getY() - (sq.getHeight() / 2),  this);
-		
-		
-
-		
-		
-	}
-//=======
-//>>>>>>> branch 'master' of https://github.com/lsom/acornchase.git
-
-
 	private void drawUI(Graphics g) {
 		int height = game.HEIGHT - 70;
 		int width = game.WIDTH / 5;
@@ -187,7 +168,7 @@ public class Board extends JPanel implements ActionListener{
 		} else {
 			counterweight++;
 		}
-		counter2 += 1;
+		counter2 += 5;
 		game.update();
 		repaint();
 		
