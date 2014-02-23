@@ -134,24 +134,34 @@ public class Board extends JPanel implements ActionListener{
 		public void mouseClicked(MouseEvent e) {
 			if (scareBounds.contains(new Point(e.getX(), e.getY()))) {
 				System.out.println("scareBounds");
+				Sound turbo = new Sound("scare.wav");
+				turbo.play();
 				game.applyPower("scare");
 			}
 			if (turboBounds.contains(new Point(e.getX(), e.getY()))) {
 				System.out.println("turboBounds");
+				Sound turbo = new Sound("turbo.wav");
+				turbo.play();
 				game.applyPower("turbo");
 
 			}
 			if (jumpBounds.contains(new Point(e.getX(), e.getY()))) {
 				System.out.println("jumpBounds");
+				Sound bounce = new Sound("jump.wav");
+				bounce.play();
 				game.applyPower("jump");
 
 			}
 			if (slowBounds.contains(new Point(e.getX(), e.getY()))) {
 				System.out.println("slowBounds");
+				Sound bounce = new Sound("slow.wav");
+				bounce.play();
 				game.applyPower("slow");
 			}
 			if (blockBounds.contains(new Point(e.getX(), e.getY()))) {
 				System.out.println("blockBounds");
+				Sound bounce = new Sound("defense.wav");
+				bounce.play();
 				game.applyPower("block");
 			}
 
