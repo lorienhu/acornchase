@@ -20,7 +20,6 @@ import javax.swing.JPanel;
 import javax.swing.Timer;
 
 import acornchase.model.Game;
-import acornchase.model.Squirrel;
 
 @SuppressWarnings("serial")
 public class Board extends JPanel implements ActionListener{
@@ -75,6 +74,7 @@ public class Board extends JPanel implements ActionListener{
 			gameOver(g);
 		}	      //  g.drawImage(bgImage, 0, 0, null);
 	}
+
 
 
 	private void drawUI(Graphics g) {
