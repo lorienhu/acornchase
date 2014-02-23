@@ -27,7 +27,6 @@ public class Board extends JPanel implements ActionListener{
 	private static final String REPLAY = "";
 	private Game game;
 	Button[] buttons;
-	//<<<<<<< HEAD
 	ScorePanel time;
 
 	TurboBlock turboBlock;
@@ -46,7 +45,11 @@ public class Board extends JPanel implements ActionListener{
 	int counter2 = 0;
 	int counter = 0;
 	private int counterweight;
-
+	Sound BlockSound;
+	Sound SlowSound;
+	Sound JumpSound; 
+	Sound TurboSound;
+	Sound ScareSound;
 
 	public Board(Game g) {
 		setPreferredSize(new Dimension(Game.WIDTH, Game.HEIGHT)); 
@@ -65,7 +68,11 @@ public class Board extends JPanel implements ActionListener{
 		reBlock = new replayBlock();
 		timer = new Timer(100, this);
 		timer.start();
-
+		BlockSound = new Sound("defense.wav");
+		SlowSound = new Sound("slow.wav");
+		JumpSound = new Sound("jump.wav");
+		TurboSound = new Sound("turbo.wav");
+		ScareSound = new Sound("scare.wav");
 	}
 
 
@@ -74,10 +81,10 @@ public class Board extends JPanel implements ActionListener{
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		Graphics2D g2d = (Graphics2D)g;
-		ImageIcon ii = new ImageIcon(this.getClass().getResource("space.jpg"));
+		ImageIcon ii = new ImageIcon(this.getClass().getResource("bg.jpg"));
 		Image image = ii.getImage();
-		g2d.drawImage(image, -(1600 - 640) + (counter2), 0, this);
-		if ((1178 - 640) < counter2) {
+		g2d.drawImage(image, -(1280 - 640) + (counter2), 0, this);
+		if ((1280 - 640) < counter2) {
 			counter2 = 0;
 		}
 		g.setColor(Color.WHITE);
@@ -130,11 +137,6 @@ public class Board extends JPanel implements ActionListener{
 		blockBounds = new Rectangle(width * 2, height, 100, 50);
 		turboBounds = new Rectangle(width * 3, height, 100, 50);
 		scareBounds = new Rectangle(width * 4, height, 100, 50);
-//<<<<<<< HEAD
-		
-
-//=======
-//>>>>>>> branch 'master' of https://github.com/lsom/acornchase.git
 	}
 
 
@@ -170,42 +172,37 @@ public class Board extends JPanel implements ActionListener{
 		public void mouseClicked(MouseEvent e) {
 			if (scareBounds.contains(new Point(e.getX(), e.getY()))) {
 				System.out.println("scareBounds");
-				Sound sound = new Sound("scare.wav");
 				if (game.scarePower.isReady()) {
-					sound.play();
+					ScareSound.play();
 				}
 				game.applyPower("scare");
 			}
 			if (turboBounds.contains(new Point(e.getX(), e.getY()))) {
 				System.out.println("turboBounds");
-				Sound sound = new Sound("turbo.wav");
 				if (game.scarePower.isReady()) {
-					sound.play();
+					TurboSound.play();
 				}
 				game.applyPower("turbo");
 
 			}
 			if (jumpBounds.contains(new Point(e.getX(), e.getY()))) {
 				System.out.println("jumpBounds");
-				Sound sound = new Sound("jump.wav");
 				if (game.scarePower.isReady()) {
-					sound.play();
+					JumpSound.play();
 				}
 				game.applyPower("jump");
 			}
 			if (slowBounds.contains(new Point(e.getX(), e.getY()))) {
 				System.out.println("slowBounds");
-				Sound sound = new Sound("slow.wav");
 				if (game.scarePower.isReady()) {
-					sound.play();
+					SlowSound.play();
 				}
 				game.applyPower("slow");
 			}
 			if (blockBounds.contains(new Point(e.getX(), e.getY()))) {
 				System.out.println("blockBounds");
-				Sound sound = new Sound("defense.wav");
 				if (game.scarePower.isReady()) {
-					sound.play();
+					BlockSound.play();
 				}
 				game.applyPower("block");
 			}
@@ -214,7 +211,6 @@ public class Board extends JPanel implements ActionListener{
 				System.out.println("reBounds");
 				reset();
 			}
-
 		}
 	}
 
