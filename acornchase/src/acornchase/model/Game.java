@@ -9,8 +9,8 @@ import java.util.Random;
 //Represents an AcornGame.
 public class Game {
 	
-	public static final int WIDTH = 800;
-	public static final int HEIGHT =  600;
+	public static final int WIDTH = 640;
+	public static final int HEIGHT =  480;
 	public static final Random RND = new Random();
 	
 	private Squirrel player;
@@ -39,6 +39,8 @@ public class Game {
 		// Move each squirrel.
 		// Check for collisions.
 		// Check for gameover.
+		player.move();
+		enemy.move();
 		
 	}
 	
@@ -74,6 +76,7 @@ public class Game {
 	
 	public void draw(Graphics g) {
 		player.draw(g);
+		enemy.draw(g);
 	}
 	
 	// Retrieves state of game.
