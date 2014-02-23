@@ -93,13 +93,21 @@ public class Game {
 		else if (power.equals("turbo") && turboPower.isReady()) {
 			turbo();
 		}
-
 		else if (power.equals("slow") && slowPower.isReady()) {
 			slow();
 		}
 		else if (power.equals("block") && blockPower.isReady()) {
 			block();
 		}
+		else if (power.equals("scare") && scarePower.isReady()) {
+			scare();}
+	}
+
+	private void scare() {
+		enemy.reset();
+		scarePower.activate();
+		
+		
 	}
 
 	// Add speed to squirrel for turbopower length seconds.
@@ -135,7 +143,7 @@ public class Game {
 	}
 	
 	private void checkGameOver() {
-		if (player.isBoink(enemy) && !blockPower.isActive()) {
+		if (player.isBoink(enemy)) {
 			state = "end";
 		}
 	}

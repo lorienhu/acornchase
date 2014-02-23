@@ -15,6 +15,7 @@ public class Squirrel extends Movable {
 	public JumpPower jumpPower;
 	public JPanel jp;
 	public String which;
+	private int basePos;
 
 	public Squirrel(int position, int base_speed, Color col, JPanel jp, String which) {
 		this.CONST_SPEED = 10;
@@ -28,6 +29,7 @@ public class Squirrel extends Movable {
 		this.WIDTH = 80;
 		this.jp = jp;
 		this.which = which;
+		basePos = position;
 		
 		jumpPower = new JumpPower(this);
 	}
@@ -94,6 +96,11 @@ public class Squirrel extends Movable {
 		}
 		Image image = ii.getImage();
 		g2d.drawImage(image, x_position, y_position, jp);
+	}
+
+	public void reset() {
+		x_position = basePos;
+		
 	}
 
 }

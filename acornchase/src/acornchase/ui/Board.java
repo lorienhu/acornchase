@@ -86,7 +86,8 @@ public class Board extends JPanel implements ActionListener{
 		if ((1280 - 640) < counter2) {
 			counter2 = 0;
 		}
-		g.setColor(Color.WHITE);
+		g.setFont(new Font("Serif", Font.BOLD , 25));
+		g.setColor(Color.BLACK);
 		g.drawString(Integer.toString(counter), 20, 20);
 		drawGame(g);
 		drawUI(g);
@@ -143,9 +144,9 @@ public class Board extends JPanel implements ActionListener{
 		Color saved = g.getColor();
 		
 		g.setColor(new Color( 0, 0, 0));
-		g.setFont(new Font("Serif", Font.BOLD , 30));
+		g.setFont(new Font("Serif", Font.BOLD , 25));
 		FontMetrics fm = g.getFontMetrics();
-		String end_game = OVER+ " You saved your acorn for: "+counter + " seconds";
+		String end_game = OVER+ " You saved the acorn for: "+counter + " seconds";
 		centreString(end_game, g, fm, Game.HEIGHT / 2);
 		centreString(REPLAY, g, fm, Game.HEIGHT / 2 + 50);
 		g.setColor(saved);
@@ -166,44 +167,48 @@ public class Board extends JPanel implements ActionListener{
 		game.draw(g);
 	}
 
-
 	private class MAdapter extends MouseAdapter {
 		public void mouseClicked(MouseEvent e) {
 			if (scareBounds.contains(new Point(e.getX(), e.getY()))) {
 				System.out.println("scareBounds");
 				if (game.scarePower.isReady()) {
 					ScareSound.play();
+					game.applyPower("scare");
 				}
-				game.applyPower("scare");
+				
 			}
 			if (turboBounds.contains(new Point(e.getX(), e.getY()))) {
 				System.out.println("turboBounds");
-				if (game.scarePower.isReady()) { 
+				if (game.turboPower.isReady()) { 
 					TurboSound.play();
+					game.applyPower("turbo");
 				}
-				game.applyPower("turbo");
+			
 
 			}
 			if (jumpBounds.contains(new Point(e.getX(), e.getY()))) {
 				System.out.println("jumpBounds");
-				if (game.scarePower.isReady()) {
+				if (game.jumpPower.isReady()) {
 					JumpSound.play();
+					game.applyPower("jump");
 				}
-				game.applyPower("jump");
+				
 			}
 			if (slowBounds.contains(new Point(e.getX(), e.getY()))) {
 				System.out.println("slowBounds");
-				if (game.scarePower.isReady()) {
+				if (game.slowPower.isReady()) {
 					SlowSound.play();
+					game.applyPower("slow");
 				}
-				game.applyPower("slow");
+				
 			}
 			if (blockBounds.contains(new Point(e.getX(), e.getY()))) {
 				System.out.println("blockBounds");
-				if (game.scarePower.isReady()) {
+				if (game.blockPower.isReady()) {
 					BlockSound.play();
+					game.applyPower("block");
 				}
-				game.applyPower("block");
+				
 			}
 			if(replayBounds.contains(new Point(e.getX(), e.getY())))
 			{
