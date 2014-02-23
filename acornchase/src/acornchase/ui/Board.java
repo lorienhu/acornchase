@@ -121,10 +121,11 @@ public class Board extends JPanel implements ActionListener{
 	private void gameOver(Graphics g) {
 		Color saved = g.getColor();
 		timer.stop();
-		g.setColor(new Color( 0, 0, 0));
+		g.setColor(new Color( 255, 255, 255));
 		g.setFont(new Font("Arial", 20, 20));
 		FontMetrics fm = g.getFontMetrics();
-		centreString(OVER, g, fm, Game.HEIGHT / 2);
+		String end_game = OVER+ " You saved your acorn for: "+counter + " seconds";
+		centreString(end_game, g, fm, Game.HEIGHT / 2);
 		centreString(REPLAY, g, fm, Game.HEIGHT / 2 + 50);
 		g.setColor(saved);
 	}
