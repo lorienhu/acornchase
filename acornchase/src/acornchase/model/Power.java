@@ -1,5 +1,7 @@
 package acornchase.model;
 
+import java.awt.Graphics;
+
 public class Power extends Drawable {
 
 	private int timer;
@@ -11,7 +13,6 @@ public class Power extends Drawable {
 		length = l;
 		cooldown = cd;
 
-	
 	}
 	
 	public void afflict() {
@@ -23,6 +24,12 @@ public class Power extends Drawable {
 	
 	public int getCooldown() {
 		return cooldown;
+	}
+
+	@Override
+	public void draw(Graphics g) {
+		// TODO Auto-generated method stub
+		
 	}	
 	
 	

@@ -1,15 +1,24 @@
 package acornchase.model;
 
-public class Squirrel extends Movable {
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Image;
+import java.awt.image.ImageObserver;
 
+import javax.swing.ImageIcon;
+
+public class Squirrel extends Movable {
 
 	private int base_speed;
 
-	public Squirrel(int position, int base_speed) {
+	public Squirrel(int position, int base_speed, Color col) {
 		this.CONST_SPEED = 10;
 		this.x_speed = base_speed;
 		this.y_speed = 0;
 		this.x_position = position;
+		this.y_position = 100;
+		this.colour = col;
 
 	}
 	
@@ -37,5 +46,15 @@ public class Squirrel extends Movable {
 	//where the squirrel is on the screen
 	public int getPosition() {
 		return x_position;
+	}
+
+	@Override
+	public void draw(Graphics g) {
+		// TODO Auto-generated method stub
+		System.out.println("got here");
+		g.setColor(colour);
+		g.fillRect(x_position - WIDTH / 2, y_position - HEIGHT / 2, WIDTH, HEIGHT);
+		
+		g.drawRect(x_position - WIDTH / 2, y_position - HEIGHT / 2, WIDTH, HEIGHT);
 	}
 }
