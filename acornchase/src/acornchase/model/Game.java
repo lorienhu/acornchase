@@ -40,6 +40,9 @@ public class Game {
 		// Check for collisions.
 		// Check for gameover.
 		player.move();
+		enemy.move();
+		
+		System.out.println(player.isBoink(enemy));
 		enemy.move();		
 		checkGameOver();
 		
