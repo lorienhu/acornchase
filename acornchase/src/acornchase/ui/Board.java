@@ -24,7 +24,7 @@ import acornchase.model.Game;
 @SuppressWarnings("serial")
 public class Board extends JPanel implements ActionListener{
 	private static final String OVER = "Game Over!";
-	private static final String REPLAY = "R to replay";
+	private static final String REPLAY = "";
 	private Game game;
 	Button[] buttons;
 //<<<<<<< HEAD
@@ -40,6 +40,8 @@ public class Board extends JPanel implements ActionListener{
 	Rectangle freezeBounds;
 	Rectangle slowBounds;
 	Rectangle blockBounds;
+	replayBlock reBlock;
+	Rectangle replayBounds;
 	Timer timer;
 	int counter2 = 0;
 	int counter = 0;
@@ -60,6 +62,7 @@ public class Board extends JPanel implements ActionListener{
 		slowBlock = new SlowBlock();
 		freezeBlock = new FreezeBlock();
 		turboBlock = new TurboBlock();
+		reBlock = new replayBlock();
 		timer = new Timer(100, this);
 		timer.start();
 		
@@ -122,14 +125,13 @@ public class Board extends JPanel implements ActionListener{
 		turboBounds = new Rectangle(width * 3, height, 100, 50);
 		scareBounds = new Rectangle(width * 4, height, 100, 50);
 		
-		// TODO Auto-generated method stub
 
 	}
 
 
 	private void gameOver(Graphics g) {
 		Color saved = g.getColor();
-		timer.stop();
+		
 		g.setColor(new Color( 255, 255, 255));
 		g.setFont(new Font("Arial", 20, 20));
 		FontMetrics fm = g.getFontMetrics();
@@ -137,6 +139,12 @@ public class Board extends JPanel implements ActionListener{
 		centreString(end_game, g, fm, Game.HEIGHT / 2);
 		centreString(REPLAY, g, fm, Game.HEIGHT / 2 + 50);
 		g.setColor(saved);
+		Graphics2D g2d = (Graphics2D)g;
+		g2d.drawImage(reBlock.getImage(), 300, 250, this);
+		replayBounds = new Rectangle(300,250,63, 62);
+		timer.stop();
+		
+		
 	}
 
 	private void centreString(String str, Graphics g, FontMetrics fm, int yPos) {
@@ -173,11 +181,22 @@ public class Board extends JPanel implements ActionListener{
 				System.out.println("blockBounds");
 				game.applyPower("block");
 			}
+			if(replayBounds.contains(new Point(e.getX(), e.getY())))
+			{
+				System.out.println("reBounds");
+				reset();
+			}
 
 		}
 
 	}
 
+	public void reset()
+	{
+		game = new Game();
+		timer = new Timer(100, this);
+		timer.start();
+	}
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {

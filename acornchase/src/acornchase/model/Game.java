@@ -6,12 +6,15 @@ import java.awt.event.MouseEvent;
 import java.util.List;
 import java.util.Random;
 
+import acornchase.ui.Launcher;
+
 //Represents an AcornGame.
 public class Game {
 	
 	public static final int WIDTH = 640;
 	public static final int HEIGHT =  480;
 	public static final Random RND = new Random();
+
 	
 	private Squirrel player;
 	private Squirrel enemy;
@@ -27,6 +30,7 @@ public class Game {
 	private Power slowPower;
 	
 	public Game() {
+		
 		state = "start";
 		time = 0;
 		player = new Squirrel(PLAYER_START_POS, 0, Color.BLUE);
@@ -109,5 +113,4 @@ public class Game {
 		return player;
 	}
 	 
-
 }
