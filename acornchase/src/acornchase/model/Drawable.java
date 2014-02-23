@@ -55,12 +55,8 @@ public abstract class Drawable {
 		Rectangle rA = new Rectangle(xA, yA, wA, hA);
 	    Rectangle rB = new Rectangle(xB, yB, wB, hB);
 	    
-	    if (rA.intersects(rB)) {
-	    	return true;
-	    }
-	    else return false;
+	    return rA.intersects(rB);
 	}
-	
 }
 
 
