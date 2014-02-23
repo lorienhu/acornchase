@@ -10,7 +10,9 @@ public class Launcher extends JFrame{
 	private Game game;
 	public Launcher() {
 		game = new Game();
-		add(new Board(game));
+		Board board = new Board(game);
+		game.addBoard(board);
+		add(board);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(Game.WIDTH, Game.HEIGHT);
 		setLocationRelativeTo(null);

@@ -8,6 +8,9 @@ import java.util.Observable;
 import java.util.Observer;
 import java.util.Random;
 
+import javax.swing.JPanel;
+
+import acornchase.ui.Board;
 import acornchase.ui.Launcher;
 
 //Represents an AcornGame.
@@ -35,14 +38,14 @@ public class Game {
 	public Power blockPower;
 	public Power scarePower;
 
-
+	public JPanel jp;
 	
 	public Game() {
-		
+				
 		state = "start";
 		time = 0;
-		player = new Squirrel(PLAYER_START_POS, 0, Color.BLUE);
-		enemy = new Squirrel(ENEMY_START_POS, 1, Color.RED);
+		player = new Squirrel(PLAYER_START_POS, 0, Color.BLUE, jp, "player");
+		enemy = new Squirrel(ENEMY_START_POS, 1, Color.RED, jp, "enemy");
 		
 		slowPower = new Power(0, 3*10);
 		jumpPower = player.jumpPower;
@@ -51,6 +54,11 @@ public class Game {
 		scarePower = new Power(0, 3*10);
 
 	}
+
+	public void addBoard(Board b) {
+		this.jp = b;
+	}
+	
 	
 	// Update the game on a tick.
 	public void update() {

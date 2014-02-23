@@ -7,22 +7,27 @@ import java.awt.Image;
 import java.awt.image.ImageObserver;
 
 import javax.swing.ImageIcon;
+import javax.swing.JPanel;
 
 public class Squirrel extends Movable {
 
 	private int base_speed;
 	public JumpPower jumpPower;
+	public JPanel jp;
+	public String which;
 
-	public Squirrel(int position, int base_speed, Color col) {
+	public Squirrel(int position, int base_speed, Color col, JPanel jp, String which) {
 		this.CONST_SPEED = 10;
 		this.base_speed = base_speed;
 		this.x_speed = base_speed;
 		this.y_speed = 0;
 		this.x_position = position;
-		this.y_position = 100;
+		this.y_position = 275;
 		this.colour = col;
 		this.HEIGHT = 50;
 		this.WIDTH = 80;
+		this.jp = jp;
+		this.which = which;
 		
 		jumpPower = new JumpPower(this);
 	}
@@ -79,9 +84,16 @@ public class Squirrel extends Movable {
 
 	@Override
 	public void draw(Graphics g) {
-		// TODO Auto-generated method stub
-		g.fillRect (x_position - WIDTH / 2, y_position - HEIGHT / 2, WIDTH, HEIGHT);
-		g.setColor(colour);
+		Graphics2D g2d = (Graphics2D)g;
+		ImageIcon ii;
+		if (which.equals("player")) {
+			ii = new ImageIcon(this.getClass().getResource("squirrelplayer.png"));
+		}
+		else {
+			ii = new ImageIcon(this.getClass().getResource("squirrel.png"));
+		}
+		Image image = ii.getImage();
+		g2d.drawImage(image, x_position, y_position, jp);
 	}
 
 }

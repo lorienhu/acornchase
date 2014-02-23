@@ -56,10 +56,10 @@ public class Board extends JPanel implements ActionListener{
 
 		setSize(new Dimension(Game.WIDTH, Game.HEIGHT));  
 		buttons = new Button[5];
+		this.game = g;
 		addMouseListener(new MAdapter()); //for the point n click
 		setFocusable(true);
 		setBackground(Color.BLACK); //I want this to be the image
-		this.game = g;
 		scareBlock = new ScareBlock();
 		blockBlock = new BlockBlock();
 		slowBlock = new SlowBlock();
@@ -74,7 +74,6 @@ public class Board extends JPanel implements ActionListener{
 		TurboSound = new Sound("turbo.wav");
 		ScareSound = new Sound("scare.wav");
 	}
-
 
 	//This to set the background image, draw stuff
 	@Override
