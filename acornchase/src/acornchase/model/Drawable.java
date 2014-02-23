@@ -44,7 +44,7 @@ public abstract class Drawable {
 		if ((y > (y_position + HEIGHT/2)) || (y < (y_position - HEIGHT/2))) return false;
 		else return true;
 	}
-	
+	 
 	//returns true if two Drawables have collided
 	public boolean isBoink(Drawable a, Drawable b) {
 		int xA = a.getX() - a.getWidth()/2; int yA = a.getY() + a.getHeight()/2; 
@@ -58,7 +58,7 @@ public abstract class Drawable {
 	    if (rA.intersects(rB)) {
 	    	return true;
 	    }
-	    else return true;
+	    else return false;
 	}
 	
 }
