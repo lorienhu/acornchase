@@ -27,7 +27,6 @@ public class Board extends JPanel implements ActionListener{
 	private static final String REPLAY = "";
 	private Game game;
 	Button[] buttons;
-	//<<<<<<< HEAD
 	ScorePanel time;
 
 	TurboBlock turboBlock;
@@ -138,11 +137,6 @@ public class Board extends JPanel implements ActionListener{
 		blockBounds = new Rectangle(width * 2, height, 100, 50);
 		turboBounds = new Rectangle(width * 3, height, 100, 50);
 		scareBounds = new Rectangle(width * 4, height, 100, 50);
-//<<<<<<< HEAD
-		
-
-//=======
-//>>>>>>> branch 'master' of https://github.com/lsom/acornchase.git
 	}
 
 
@@ -212,18 +206,13 @@ public class Board extends JPanel implements ActionListener{
 				}
 				game.applyPower("block");
 			}
-//<<<<<<< HEAD
 			if(replayBounds.contains(new Point(e.getX(), e.getY())))
 			{
 				System.out.println("reBounds");
 				reset();
 			}
-
-//=======
-//>>>>>>> branch 'master' of https://github.com/lsom/acornchase.git
 		}
 	}
-//<<<<<<< HEAD
 
 	public void reset()
 	{
@@ -231,8 +220,6 @@ public class Board extends JPanel implements ActionListener{
 		timer = new Timer(100, this);
 		timer.start();
 	}
-//=======
-//>>>>>>> branch 'master' of https://github.com/lsom/acornchase.git
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
