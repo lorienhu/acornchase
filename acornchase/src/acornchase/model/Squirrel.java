@@ -27,10 +27,10 @@ public class Squirrel extends Movable {
 	//jump 
 
 	public void move() {
-		if (x_position == 0) {
+	x_position -= x_speed;
+		if (x_position-WIDTH/2 <= 0) {
 			x_speed = 0;
 		}
-		x_position -= x_speed;
 	}
 	
 	//jump
