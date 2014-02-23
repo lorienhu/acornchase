@@ -97,7 +97,7 @@ public class Game {
 
 	private void scare() {
 		enemy.reset();
-		scarePower.activate(10);
+		scarePower.activate();
 		
 		
 	}
@@ -105,18 +105,18 @@ public class Game {
 	// Add speed to squirrel for turbopower length seconds.
 	public void turbo() {
 		enemy.goBack();
-		turboPower.activate(3);
+		turboPower.activate();
 	}
 	
 	// Block the squirrel from dying.
 	public void block() {
-		blockPower.activate(4);
+		blockPower.activate();
 	}
 	
 	// Lower the speed of the opposing squirrel.
 	public void slow() {
 		enemy.slow();
-		slowPower.activate(3);
+		slowPower.activate();
 
 		
 	}

@@ -28,9 +28,8 @@ public class Power extends Drawable {
 		return (status=="on");
 	}
 	
-	public void activate(int length) {
+	public void activate() {
 		status = "on";
-		this.length =length; 
 	}
 	
 	public void deactivate() {
