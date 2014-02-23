@@ -210,10 +210,12 @@ public class Board extends JPanel implements ActionListener{
 				}
 				
 			}
-			if(replayBounds.contains(new Point(e.getX(), e.getY())))
-			{
-				System.out.println("reBounds");
-				reset();
+			if (game.getState().equals("end")) {
+				if(replayBounds.contains(new Point(e.getX(), e.getY())))
+				{
+					System.out.println("reBounds");
+					reset();
+				}
 			}
 		}
 	}
