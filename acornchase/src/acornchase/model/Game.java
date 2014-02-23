@@ -90,6 +90,10 @@ public class Game {
 	private void checkGameOver()   {
 		
 	}
+	
+	public Squirrel getSquirrel() {
+		return player;
+	}
 	 
 
 }

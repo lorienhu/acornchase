@@ -2,6 +2,11 @@ package acornchase.model;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Image;
+import java.awt.image.ImageObserver;
+
+import javax.swing.ImageIcon;
 
 public class Squirrel extends Movable {
 
@@ -49,5 +54,7 @@ public class Squirrel extends Movable {
 		System.out.println("got here");
 		g.setColor(colour);
 		g.fillRect(x_position - WIDTH / 2, y_position - HEIGHT / 2, WIDTH, HEIGHT);
+		
+		g.drawRect(x_position - WIDTH / 2, y_position - HEIGHT / 2, WIDTH, HEIGHT);
 	}
 }
