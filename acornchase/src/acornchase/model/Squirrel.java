@@ -26,7 +26,9 @@ public class Squirrel extends Movable {
 	}
 
 	public void slow() {
+		if (x_speed>=2) {
 		x_speed = x_speed-2;
+		}
 	}
 	
 	public void speedUp() {
