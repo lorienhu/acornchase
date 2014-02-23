@@ -47,11 +47,12 @@ public class Board extends JPanel implements ActionListener{
 
 
 	public Board(Game g) {
+		setPreferredSize(new Dimension(Game.WIDTH, Game.HEIGHT));  
+		setSize(new Dimension(Game.WIDTH, Game.HEIGHT));  
 		buttons = new Button[5];
 		addMouseListener(new MAdapter()); //for the point n click
 		setFocusable(true);
-		setPreferredSize(new Dimension(Game.WIDTH, Game.HEIGHT));  
-		setBackground(Color.GRAY); //I want this to be the image
+		setBackground(Color.BLACK); //I want this to be the image
 		this.game = g;
 		scareBlock = new ScareBlock();
 		blockBlock = new BlockBlock();

@@ -46,7 +46,7 @@ public class Squirrel extends Movable {
 	@Override
 	public void draw(Graphics g) {
 		// TODO Auto-generated method stub
-		System.out.println("got here");
+		//System.out.println("got here");
 		g.setColor(colour);
 		g.fillRect(x_position - WIDTH / 2, y_position - HEIGHT / 2, WIDTH, HEIGHT);
 	}

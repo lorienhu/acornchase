@@ -7,7 +7,7 @@ public class Launcher extends JFrame{
 	public Launcher() {
 		add(new Board(new Game()));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setSize(500, 400);
+		setSize(Game.WIDTH, Game.HEIGHT);
 		setLocationRelativeTo(null);
 		setTitle("Game");
 		setResizable(false);
