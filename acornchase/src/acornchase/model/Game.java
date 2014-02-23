@@ -27,12 +27,20 @@ public class Game {
 	public boolean isOver;
 	
 	private Power slowPower;
+	private Power freezePower;
+	private Power turboPower;
+	private Power blockPower;
+	private Power scarePower;
+
+
 	
 	public Game() {
 		state = "start";
 		time = 0;
 		player = new Squirrel(PLAYER_START_POS, 0, Color.BLUE);
 		enemy = new Squirrel(ENEMY_START_POS, 1, Color.RED);
+		
+		turboPower = new Power(0, 3*10);
 	}
 	
 	// Update the game on a tick.
@@ -44,6 +52,8 @@ public class Game {
 		player.move();
 		enemy.move();		
 		checkGameOver();
+		
+		turboPower.tick();
 		
 	}
 
@@ -59,9 +69,10 @@ public class Game {
 		if (power.equals("jump")) {
 			player.jump();
 		}
-		else if (power.equals("turbo")) {
+		else if (power.equals("turbo") && turboPower.isReady()) {
 			turbo();
 		}
+
 		else if (power.equals("slow")) {
 			block();
 		}
@@ -73,6 +84,7 @@ public class Game {
 	// Add speed to squirrel for turbopower length seconds.
 	public void turbo() {
 		enemy.slow();
+		turboPower.activate();
 	}
 	
 	// Block the squirrel from dying.
