@@ -27,7 +27,7 @@ public class Board extends JPanel implements ActionListener{
 	private static final String REPLAY = "R to replay";
 	private Game game;
 	Button[] buttons;
-//<<<<<<< HEAD
+	//<<<<<<< HEAD
 	ScorePanel time;
 
 	TurboBlock turboBlock;
@@ -48,7 +48,7 @@ public class Board extends JPanel implements ActionListener{
 
 	public Board(Game g) {
 		setPreferredSize(new Dimension(Game.WIDTH, Game.HEIGHT)); 
-		
+
 		setSize(new Dimension(Game.WIDTH, Game.HEIGHT));  
 		buttons = new Button[5];
 		addMouseListener(new MAdapter()); //for the point n click
@@ -62,7 +62,7 @@ public class Board extends JPanel implements ActionListener{
 		turboBlock = new TurboBlock();
 		timer = new Timer(100, this);
 		timer.start();
-		
+
 
 
 	}
@@ -92,17 +92,44 @@ public class Board extends JPanel implements ActionListener{
 		int height = game.HEIGHT - 70;
 		int width = game.WIDTH / 5;
 		Graphics2D g2d = (Graphics2D)g;
-		g2d.drawImage(slowBlock.getImage(), 0, height, this);
-		g2d.drawImage(jumpBlock.getImage(), width, height, this);
-		g2d.drawImage(blockBlock.getImage(), width * 2, height, this);
-		g2d.drawImage(turboBlock.getImage(), width * 3, height, this);
-		g2d.drawImage(scareBlock.getImage(), width * 4, height, this);
+		ImageIcon ii = new ImageIcon(this.getClass().getResource("unready.png"));
+		Image img = ii.getImage();
+		if (!game.blockPower.isActive()) {
+			g2d.drawImage(blockBlock.getImage(), width * 2, height, this);
+		} else {
+			g2d.drawImage(img, width * 2, height, this);
+		}
+		if (!game.jumpPower.isActive()) {
+			g2d.drawImage(jumpBlock.getImage(), width, height, this);
+
+		} else {
+			g2d.drawImage(img, width, height, this);
+		}
+		if (!game.scarePower.isActive()) {
+			g2d.drawImage(scareBlock.getImage(), width * 4, height, this);
+
+		} else {
+			g2d.drawImage(img, width, height, this);
+		}
+		if (!game.slowPower.isActive()) {
+			g2d.drawImage(slowBlock.getImage(), 0, height, this);
+
+		} else {
+			g2d.drawImage(img, 0, height, this);
+		}
+		if (!game.turboPower.isActive()) {
+			g2d.drawImage(turboBlock.getImage(), width * 3, height, this);
+
+		} else  {
+			g2d.drawImage(img, width * 3, height, this);
+		}
+		
 		slowBounds = new Rectangle(0, height, 100, 50);
 		jumpBounds = new Rectangle(width, height, 100, 50);
 		blockBounds = new Rectangle(width * 2, height, 100, 50);
 		turboBounds = new Rectangle(width * 3, height, 100, 50);
 		scareBounds = new Rectangle(width * 4, height, 100, 50);
-		
+
 		// TODO Auto-generated method stub
 
 	}
@@ -192,7 +219,7 @@ public class Board extends JPanel implements ActionListener{
 		counter2 += 5;
 		game.update();
 		repaint();
-		
+
 	}
 
 }
