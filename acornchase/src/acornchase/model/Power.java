@@ -20,6 +20,10 @@ public class Power extends Drawable {
 		return status;
 	}
 	
+	public boolean isReady() {
+		return (status.equals("off"));
+	}
+	
 	public boolean isActive() {
 		return (status=="on");
 	}
@@ -30,26 +34,27 @@ public class Power extends Drawable {
 	
 	public void deactivate() {
 		status = "cd";
-		// Deactivation event.
 	}
 	
 	public void tick() {
+				
 		if (!status.equals("off")) {
 			timer++;
-		}
 		
-		if (timer == length) {
-			deactivate();
-		}
+			if (timer == length) {
+				deactivate();
+			}
 		
-		if (timer == cooldown) {
-			status = "off";
-			
+			if (timer == cooldown) {
+				status = "off";
+				timer = 0;
+				System.out.println("ready to use");
+			}
 		}
 	}
 	
 	public int getCooldown() {
-		return cooldown;
+		return (cooldown-timer);
 	}
 
 	@Override

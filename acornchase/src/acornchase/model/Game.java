@@ -26,13 +26,26 @@ public class Game {
 	public String state;
 	public boolean isOver;
 	
-	private Power slowPower;
+	public Power slowPower;
+	public Power jumpPower;
+	public Power turboPower;
+	public Power blockPower;
+	public Power scarePower;
+
+
 	
 	public Game() {
 		state = "start";
 		time = 0;
 		player = new Squirrel(PLAYER_START_POS, 0, Color.BLUE);
 		enemy = new Squirrel(ENEMY_START_POS, 1, Color.RED);
+		
+		slowPower = new Power(0, 3*10);
+		jumpPower = new Power(0, 3*10);
+		turboPower = new Power(0, 3*10);
+		blockPower = new Power(0, 3*10);
+		scarePower = new Power(0, 3*10);
+
 	}
 	
 	// Update the game on a tick.
@@ -45,6 +58,8 @@ public class Game {
 		enemy.move();		
 		checkGameOver();
 		
+		turboPower.tick();
+		
 	}
 
 	public void updateSlow() {
@@ -56,32 +71,37 @@ public class Game {
 	}
 	
 	public void applyPower(String power) {
-		if (power.equals("jump")) {
+		if (power.equals("jump") && jumpPower.isReady()) {
 			player.jump();
 		}
-		else if (power.equals("turbo")) {
+		else if (power.equals("turbo") && turboPower.isReady()) {
 			turbo();
 		}
-		else if (power.equals("slow")) {
-			block();
+
+		else if (power.equals("slow") && slowPower.isReady()) {
+			slow();
 		}
-		else if (power.equals("block")) {
+		else if (power.equals("block") && blockPower.isReady()) {
 			block();
 		}
 	}
 
 	// Add speed to squirrel for turbopower length seconds.
 	public void turbo() {
-		enemy.slow();
+		enemy.goBack();
+		turboPower.activate();
 	}
 	
 	// Block the squirrel from dying.
 	public void block() {
-		
+		blockPower.activate();
 	}
 	
 	// Lower the speed of the opposing squirrel.
 	public void slow() {
+		enemy.slow();
+		slowPower.activate();
+
 		
 	}
 	

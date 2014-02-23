@@ -24,6 +24,10 @@ public class Squirrel extends Movable {
 		this.WIDTH = 80;
 	}
 
+	public void goBack() {
+		x_speed = -5;
+	}
+	
 	public void slow() {
 		if (x_speed>=2) {
 			x_speed = x_speed-2;
@@ -31,7 +35,10 @@ public class Squirrel extends Movable {
 	}
 
 	public void speedUp() {
-		if (x_speed<base_speed*4) {
+		if (x_speed<base_speed*2) {
+			x_speed = x_speed+5;
+		}
+		else if (x_speed<base_speed*4) {
 			x_speed++;
 		}
 	}
