@@ -39,6 +39,8 @@ public abstract class Drawable {
 	
 	//returns true if two Drawables have collided
 	public boolean isBoink(Drawable a, Drawable b) {
+		int dA = a.getX();
+		int dB = a.getX();
 		
 		return true;
 	}
