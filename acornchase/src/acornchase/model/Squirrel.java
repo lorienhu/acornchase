@@ -26,10 +26,10 @@ public class Squirrel extends Movable {
 
 	public void slow() {
 		if (x_speed>=2) {
-		x_speed = x_speed-2;
+			x_speed = x_speed-2;
 		}
 	}
-	
+
 	public void speedUp() {
 		if (x_speed<base_speed*4) {
 			x_speed++;
@@ -37,24 +37,29 @@ public class Squirrel extends Movable {
 	}
 
 	public void move() {
-	x_position -= x_speed;
-	y_position -= y_speed;
+		x_position -= x_speed;
+		y_position -= y_speed;
 		if (x_position-WIDTH/2 <= 0) {
 			x_speed = 0;
 		}
 	}
-	
+
 	//jump
 	public void jump() {
-		y_speed = 20;
-		y_position = 200;
+
+		y_position = 100;
+		y_speed = 2;
+		
+
+		System.out.println("This is y_position: " + y_position);
+		System.out.println("This is y_speed: " + y_speed);
 	}
-	
+
 	//how fast the squirrel is moving
 	public int getSpeed() {
 		return x_speed;
 	}
-	
+
 	//where the squirrel is on the screen
 	public int getPosition() {
 		return x_position;
