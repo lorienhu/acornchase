@@ -88,6 +88,23 @@ public class Board extends JPanel implements ActionListener{
 		}	      //  g.drawImage(bgImage, 0, 0, null);
 	}
 
+//<<<<<<< HEAD
+
+	private void drawSprites(Graphics g) {
+//		Squirrel sq = game.getSquirrel();
+//
+//		Graphics2D g2d = (Graphics2D)g;
+//		ImageIcon ii = new ImageIcon(this.getClass().getResource("squirrel.png"));
+//		Image image = ii.getImage();
+//		g2d.drawImage(image, sq.getX() - (sq.getWidth() / 2), sq.getY() - (sq.getHeight() / 2),  this);
+		
+		
+
+		
+		
+	}
+//=======
+//>>>>>>> branch 'master' of https://github.com/lsom/acornchase.git
 
 
 	private void drawUI(Graphics g) {
@@ -112,6 +129,7 @@ public class Board extends JPanel implements ActionListener{
 
 	private void gameOver(Graphics g) {
 		Color saved = g.getColor();
+		timer.stop();
 		g.setColor(new Color( 0, 0, 0));
 		g.setFont(new Font("Arial", 20, 20));
 		FontMetrics fm = g.getFontMetrics();
