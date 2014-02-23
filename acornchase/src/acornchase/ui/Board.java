@@ -90,8 +90,8 @@ public class Board extends JPanel implements ActionListener{
 	}
 
 	private void drawUI(Graphics g) {
-		int height = game.HEIGHT - 70;
-		int width = game.WIDTH / 5;
+		int height = Game.HEIGHT - 70;
+		int width = Game.WIDTH / 5;
 		Graphics2D g2d = (Graphics2D)g;
 		ImageIcon ii = new ImageIcon(this.getClass().getResource("unready.png"));
 		Image img = ii.getImage();
@@ -141,8 +141,8 @@ public class Board extends JPanel implements ActionListener{
 	private void gameOver(Graphics g) {
 		Color saved = g.getColor();
 		
-		g.setColor(new Color( 255, 255, 255));
-		g.setFont(new Font("Arial", 20, 20));
+		g.setColor(new Color( 0, 0, 0));
+		g.setFont(new Font("Serif", Font.BOLD , 30));
 		FontMetrics fm = g.getFontMetrics();
 		String end_game = OVER+ " You saved your acorn for: "+counter + " seconds";
 		centreString(end_game, g, fm, Game.HEIGHT / 2);
@@ -209,27 +209,22 @@ public class Board extends JPanel implements ActionListener{
 				}
 				game.applyPower("block");
 			}
-//<<<<<<< HEAD
 			if(replayBounds.contains(new Point(e.getX(), e.getY())))
 			{
 				System.out.println("reBounds");
 				reset();
 			}
 
-//=======
-//>>>>>>> branch 'master' of https://github.com/lsom/acornchase.git
 		}
 	}
-//<<<<<<< HEAD
 
 	public void reset()
 	{
 		game = new Game();
 		timer = new Timer(100, this);
 		timer.start();
+		counter = 0;
 	}
-//=======
-//>>>>>>> branch 'master' of https://github.com/lsom/acornchase.git
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
@@ -244,8 +239,6 @@ public class Board extends JPanel implements ActionListener{
 		game.update();
 
 		repaint();		
-
-		repaint();
 
 	}
 
