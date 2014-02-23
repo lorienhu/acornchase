@@ -20,7 +20,6 @@ import javax.swing.JPanel;
 import javax.swing.Timer;
 
 import acornchase.model.Game;
-import acornchase.model.Squirrel;
 
 @SuppressWarnings("serial")
 public class Board extends JPanel implements ActionListener{
@@ -75,12 +74,12 @@ public class Board extends JPanel implements ActionListener{
 		g.drawString(Integer.toString(counter), 20, 20);
 		drawGame(g);
 		drawUI(g);
-		drawSprites(g);
 		if (game.getState().compareTo("end")==0) {
 			gameOver(g);
 		}	      //  g.drawImage(bgImage, 0, 0, null);
 	}
 
+//<<<<<<< HEAD
 
 	private void drawSprites(Graphics g) {
 //		Squirrel sq = game.getSquirrel();
@@ -95,6 +94,8 @@ public class Board extends JPanel implements ActionListener{
 		
 		
 	}
+//=======
+//>>>>>>> branch 'master' of https://github.com/lsom/acornchase.git
 
 
 	private void drawUI(Graphics g) {
