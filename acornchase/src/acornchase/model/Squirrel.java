@@ -24,7 +24,11 @@ public class Squirrel extends Movable {
 		this.WIDTH = 80;
 
 	}
-		
+
+	public void slow() {
+		x_speed = x_speed-2;
+	}
+	
 	public void speedUp() {
 		if (x_speed<base_speed*4) {
 			x_speed++;

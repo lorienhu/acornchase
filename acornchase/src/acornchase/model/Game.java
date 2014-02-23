@@ -70,6 +70,7 @@ public class Game {
 
 	// Add speed to squirrel for turbopower length seconds.
 	public void turbo() {
+		enemy.slow();
 	}
 	
 	// Block the squirrel from dying.
