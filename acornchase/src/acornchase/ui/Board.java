@@ -179,7 +179,7 @@ public class Board extends JPanel implements ActionListener{
 			}
 			if (turboBounds.contains(new Point(e.getX(), e.getY()))) {
 				System.out.println("turboBounds");
-				if (game.scarePower.isReady()) {
+				if (game.scarePower.isReady()) { 
 					TurboSound.play();
 				}
 				game.applyPower("turbo");
