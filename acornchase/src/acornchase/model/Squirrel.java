@@ -11,6 +11,7 @@ import javax.swing.ImageIcon;
 public class Squirrel extends Movable {
 
 	private int base_speed;
+	public JumpPower jumpPower;
 
 	public Squirrel(int position, int base_speed, Color col) {
 		this.CONST_SPEED = 10;
@@ -22,6 +23,12 @@ public class Squirrel extends Movable {
 		this.colour = col;
 		this.HEIGHT = 50;
 		this.WIDTH = 80;
+		
+		jumpPower = new JumpPower(this);
+	}
+	
+	public void setYSpeed(int i) {
+		y_speed = i;
 	}
 
 	public void goBack() {
@@ -53,13 +60,11 @@ public class Squirrel extends Movable {
 
 	//jump
 	public void jump() {
-
-		y_position = 100;
-		y_speed = 2;
-		
-
-		System.out.println("This is y_position: " + y_position);
-		System.out.println("This is y_speed: " + y_speed);
+		if (jumpPower.isReady()) {
+			y_speed = 10;
+			jumpPower.activate();
+			System.out.println("yo");
+		}
 	}
 
 	//how fast the squirrel is moving

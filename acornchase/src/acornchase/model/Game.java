@@ -41,7 +41,7 @@ public class Game {
 		enemy = new Squirrel(ENEMY_START_POS, 1, Color.RED);
 		
 		slowPower = new Power(0, 3*10);
-		jumpPower = new Power(0, 3*10);
+		jumpPower = player.jumpPower;
 		turboPower = new Power(0, 3*10);
 		blockPower = new Power(0, 3*10);
 		scarePower = new Power(0, 3*10);
@@ -59,6 +59,10 @@ public class Game {
 		checkGameOver();
 		
 		turboPower.tick();
+		slowPower.tick();
+		jumpPower.tick();
+		blockPower.tick();
+		scarePower.tick();
 		
 	}
 
