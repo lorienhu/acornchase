@@ -42,6 +42,8 @@ public class Game {
 		player.move();
 		enemy.move();
 		
+		System.out.println();
+		
 	}
 	
 	
