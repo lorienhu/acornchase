@@ -132,9 +132,9 @@ public class Game {
 		
 	}
 	
-	public void draw(Graphics g) {
-		player.draw(g);
-		enemy.draw(g);
+	public void draw(Graphics g, int counter) {
+		player.draw(g, counter);
+		enemy.draw(g, counter);
 	}
 	
 	// Retrieves state of game.

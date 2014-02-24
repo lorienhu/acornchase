@@ -84,15 +84,17 @@ public class Squirrel extends Movable {
 		return x_position;
 	}
 
-	@Override
-	public void draw(Graphics g) {
+	public void draw(Graphics g, int counter) {
 		Graphics2D g2d = (Graphics2D)g;
 		ImageIcon ii;
 		if (which.equals("player")) {
 			ii = new ImageIcon(this.getClass().getResource("squirrelplayer.png"));
 		}
 		else {
-			ii = new ImageIcon(this.getClass().getResource("squirrel.png"));
+			if(counter%2 == 0)
+				ii = new ImageIcon(this.getClass().getResource("squirrel.png"));
+			else
+				ii = new ImageIcon(this.getClass().getResource("squirrel2.png"));
 		}
 		Image image = ii.getImage();
 		g2d.drawImage(image, x_position, y_position, jp);
@@ -100,6 +102,12 @@ public class Squirrel extends Movable {
 
 	public void reset() {
 		x_position = basePos;
+		
+	}
+
+	@Override
+	public void draw(Graphics g) {
+		// TODO Auto-generated method stub
 		
 	}
 

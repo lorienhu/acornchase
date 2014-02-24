@@ -164,7 +164,7 @@ public class Board extends JPanel implements ActionListener{
 	}
 
 	private void drawGame(Graphics g) {
-		game.draw(g);
+		game.draw(g, counterweight);
 	}
 
 	private class MAdapter extends MouseAdapter {
