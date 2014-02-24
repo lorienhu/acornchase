@@ -143,7 +143,7 @@ public class Game {
 	}
 	
 	private void checkGameOver() {
-		if (player.isBoink(enemy) && !blockPower.isActive()) {
+		if ((player.isBoink(enemy) || enemy.x_position < player.x_position) && !blockPower.isActive()) {
 			state = "end";
 		}
 	}
