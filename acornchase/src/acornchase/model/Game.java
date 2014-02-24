@@ -67,7 +67,10 @@ public class Game {
 		// Check for collisions.
 		// Check for gameover.
 		player.move();
-		enemy.move();		
+		
+		if(turboPower.isActive() || enemy.x_position > player.x_position)
+			enemy.move();		
+		
 		checkGameOver();
 		
 		turboPower.tick();
@@ -127,9 +130,9 @@ public class Game {
 		slowPower.activate();
 	}
 	
-	public void draw(Graphics g) {
-		player.draw(g);
-		enemy.draw(g);
+	public void draw(Graphics g, int counter) {
+		player.draw(g, counter);
+		enemy.draw(g, counter);
 	}
 	
 	// Retrieves state of game.
