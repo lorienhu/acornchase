@@ -125,8 +125,6 @@ public class Game {
 	public void slow() {
 		enemy.slow();
 		slowPower.activate();
-
-		
 	}
 	
 	public void draw(Graphics g) {
