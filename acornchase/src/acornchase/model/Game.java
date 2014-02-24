@@ -67,7 +67,10 @@ public class Game {
 		// Check for collisions.
 		// Check for gameover.
 		player.move();
-		enemy.move();		
+		
+		if(turboPower.isActive() || enemy.x_position > player.x_position)
+			enemy.move();		
+		
 		checkGameOver();
 		
 		turboPower.tick();

@@ -39,7 +39,7 @@ public class Squirrel extends Movable {
 	}
 
 	public void goBack() {
-		x_speed = -5;
+		x_speed = -10;
 	}
 	
 	public void slow() {

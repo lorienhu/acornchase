@@ -237,7 +237,7 @@ public class Board extends JPanel implements ActionListener{
 		} else {
 			counterweight++;
 		}
-		if(game.turboPower.isActive()) counter2 += 20;
+		if(game.turboPower.isActive()) counter2 += 15;
 		else counter2 += 5;
 		game.update();
 
