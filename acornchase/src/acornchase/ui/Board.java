@@ -117,7 +117,7 @@ public class Board extends JPanel implements ActionListener{
 			g2d.drawImage(scareBlock.getImage(), width * 4, height, this);
 
 		} else {
-			g2d.drawImage(img, width, height, this);
+			g2d.drawImage(img, width * 4, height, this);
 		}
 		if (game.slowPower.isReady()) {
 			g2d.drawImage(slowBlock.getImage(), 0, height, this);
