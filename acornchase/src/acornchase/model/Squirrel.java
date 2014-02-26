@@ -68,7 +68,7 @@ public class Squirrel extends Movable {
 	//jump
 	public void jump() {
 		if (jumpPower.isReady()) {
-			y_speed = 10;
+			y_speed = 30;
 			jumpPower.activate();
 			System.out.println("yo");
 		}
