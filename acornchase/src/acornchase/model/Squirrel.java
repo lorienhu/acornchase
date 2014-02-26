@@ -88,7 +88,7 @@ public class Squirrel extends Movable {
 		Graphics2D g2d = (Graphics2D)g;
 		ImageIcon ii;
 		if (which.equals("player")) {
-			if(counter%2 == 0 && !jumpPower.isActive())
+			if(jumpPower.isActive() || counter%2 == 0)
 				ii = new ImageIcon(this.getClass().getResource("squirrelplayer.png"));
 			else
 				ii = new ImageIcon(this.getClass().getResource("squirrelplayer2.png"));
